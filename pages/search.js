@@ -10,13 +10,13 @@ import {
 } from '@material-ui/core';
 import CancelIcon from '@material-ui/icons/Cancel';
 import { useRouter } from 'next/router';
-import React, { useContext } from 'react';
+//import React, { useContext } from 'react';
 import Layout from '../components/Layout';
 // import db from '../utils/db';
 //  import Product from '../models/Product';
 import useStyles from '../utils/styles';
 import ProductItem from '../components/ProductItem';
-import { Store } from '../utils/Store';
+//import { Store } from '../utils/Store';
 // import axios from 'axios';
 import Rating from '@material-ui/lab/Rating';
 import { Pagination } from '@material-ui/lab';
@@ -233,14 +233,14 @@ export async function getServerSideProps({ query }) {
   //await db.connect();
   const pageSize = query.pageSize || PAGE_SIZE;
   const page = query.page || 1;
-  const category = query.category || '';
+  /*const category = query.category || '';
   const brand = query.brand || '';
   const price = query.price || '';
   const rating = query.rating || '';
   const sort = query.sort || '';
-  const searchQuery = query.query || '';
+  const searchQuery = query.query || '';*/
 
-  const queryFilter =
+  /* const queryFilter =
     searchQuery && searchQuery !== 'all'
       ? {
           name: {
@@ -282,7 +282,7 @@ export async function getServerSideProps({ query }) {
       : sort === 'newest'
       ? { createdAt: -1 }
       : { _id: -1 };
-
+*/
   const categories = data.categories;
   const brands = data.brands;
   //const categories = await Product.find().distinct('category');
