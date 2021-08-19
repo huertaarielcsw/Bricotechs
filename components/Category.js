@@ -1,13 +1,7 @@
 import React from 'react';
 import NextLink from 'next/link';
 import useStyles from '../utils/styles';
-import {
-  Card,
-  CardActionArea,
-  CardContent,
-  CardMedia,
-  Typography,
-} from '@material-ui/core';
+import { Card, CardActionArea, CardMedia } from '@material-ui/core';
 
 export default function Category(category) {
   const classes = useStyles();

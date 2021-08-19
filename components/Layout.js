@@ -24,7 +24,7 @@ import useStyles from '../utils/styles';
 import NextLink from 'next/link';
 import { Store } from '../utils/Store';
 import Cookies from 'js-cookie';
-import { useSnackbar } from 'notistack';
+//import { useSnackbar } from 'notistack';
 import axios from 'axios';
 import { useEffect } from 'react';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -32,7 +32,7 @@ import CancelIcon from '@material-ui/icons/Cancel';
 import SearchIcon from '@material-ui/icons/Search';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import { getError } from '../utils/error';
+//import { getError } from '../utils/error';
 
 export default function Layout({ title, description, children }) {
   const router = useRouter();
