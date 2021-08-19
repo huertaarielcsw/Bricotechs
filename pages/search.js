@@ -10,17 +10,16 @@ import {
 } from '@material-ui/core';
 import CancelIcon from '@material-ui/icons/Cancel';
 import { useRouter } from 'next/router';
-//import React, { useContext } from 'react';
+import React from 'react';
 import Layout from '../components/Layout';
-// import db from '../utils/db';
-//  import Product from '../models/Product';
+import db from '../utils/db';
+import Product from '../models/Product';
 import useStyles from '../utils/styles';
 import ProductItem from '../components/ProductItem';
 //import { Store } from '../utils/Store';
-// import axios from 'axios';
+//import axios from 'axios';
 import Rating from '@material-ui/lab/Rating';
 import { Pagination } from '@material-ui/lab';
-import data from '../utils/data';
 
 const PAGE_SIZE = 3;
 
@@ -210,10 +209,7 @@ export default function Search(props) {
           <Grid className={classes.mt1} container spacing={3}>
             {products.map((product) => (
               <Grid item md={4} key={product.name}>
-                <ProductItem
-                  product={product}
-                  //addToCartHandler={addToCartHandler}
-                />
+                <ProductItem product={product} />
               </Grid>
             ))}
           </Grid>
@@ -230,17 +226,17 @@ export default function Search(props) {
 }
 
 export async function getServerSideProps({ query }) {
-  //await db.connect();
+  await db.connect();
   const pageSize = query.pageSize || PAGE_SIZE;
   const page = query.page || 1;
-  /*const category = query.category || '';
+  const category = query.category || '';
   const brand = query.brand || '';
   const price = query.price || '';
   const rating = query.rating || '';
   const sort = query.sort || '';
-  const searchQuery = query.query || '';*/
+  const searchQuery = query.query || '';
 
-  /* const queryFilter =
+  const queryFilter =
     searchQuery && searchQuery !== 'all'
       ? {
           name: {
@@ -282,12 +278,10 @@ export async function getServerSideProps({ query }) {
       : sort === 'newest'
       ? { createdAt: -1 }
       : { _id: -1 };
-*/
-  const categories = data.categories;
-  const brands = data.brands;
-  //const categories = await Product.find().distinct('category');
-  //const brands = await Product.find().distinct('brand');
-  /*const productDocs = await Product.find(
+
+  const categories = await Product.find().distinct('category');
+  const brands = await Product.find().distinct('brand');
+  const productDocs = await Product.find(
     {
       ...queryFilter,
       ...categoryFilter,
@@ -309,12 +303,9 @@ export async function getServerSideProps({ query }) {
     ...brandFilter,
     ...ratingFilter,
   });
-  await db.disconnect();*/
+  await db.disconnect();
 
-  //const products = productDocs.map(db.convertDocToObj);
-  const products = data.products;
-
-  const countProducts = 5;
+  const products = productDocs.map(db.convertDocToObj);
 
   return {
     props: {

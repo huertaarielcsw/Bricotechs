@@ -24,14 +24,15 @@ import useStyles from '../utils/styles';
 import NextLink from 'next/link';
 import { Store } from '../utils/Store';
 import Cookies from 'js-cookie';
-//import { useSnackbar } from 'notistack';
-//import axios from 'axios';
-//import { useEffect } from 'react';
+import { useSnackbar } from 'notistack';
+import axios from 'axios';
+import { useEffect } from 'react';
 import MenuIcon from '@material-ui/icons/Menu';
 import CancelIcon from '@material-ui/icons/Cancel';
 import SearchIcon from '@material-ui/icons/Search';
-import data from '../utils/data';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
+import { getError } from '../utils/error';
 
 export default function Layout({ title, description, children }) {
   const router = useRouter();
@@ -70,18 +71,18 @@ export default function Layout({ title, description, children }) {
     setSidebarVisible(false);
   };
 
-  //const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState([]);
   //const { enqueueSnackbar } = useSnackbar();
 
-  /*const fetchCategories = async () => {
+  const fetchCategories = async () => {
     try {
-      //const { data } = await axios.get(`/api/products/categories`);
+      const { data } = await axios.get(`/api/products/categories`);
       const { dat } = data.categories;
       setCategories(dat);
     } catch (err) {
       //enqueueSnackbar(getError(err), { variant: 'error' });
     }
-  };*/
+  };
 
   const [query, setQuery] = useState('');
   const queryChangeHandler = (e) => {
@@ -92,10 +93,9 @@ export default function Layout({ title, description, children }) {
     router.push(`/search?query=${query}`);
   };
 
-  /*
   useEffect(() => {
     fetchCategories();
-  }, []);*/
+  }, []);
 
   const darkModeChangeHandler = () => {
     dispatch({ type: darkMode ? 'DARK_MODE_OFF' : 'DARK_MODE_ON' });
@@ -105,9 +105,7 @@ export default function Layout({ title, description, children }) {
   return (
     <div>
       <Head>
-        <title>
-          {title ? `${title} - Top 5 Ferretería` : 'Top 5 Ferretería'}
-        </title>
+        <title>{title ? `${title} - BricoTechs` : 'BricoTechs'}</title>
         {description && <meta name="description" content={description}></meta>}
       </Head>
       <ThemeProvider theme={theme}>
@@ -125,9 +123,13 @@ export default function Layout({ title, description, children }) {
               </IconButton>
               <NextLink href="/" passHref>
                 <Link>
-                  <Typography className={classes.brand}>
-                    Top 5 Ferretería
-                  </Typography>
+                  <Image
+                    className={classes.siteLogoImg}
+                    src={'/images/croppedlogo.png'}
+                    alt="Logo"
+                    width="395"
+                    height="66"
+                  />
                 </Link>
               </NextLink>
             </Box>
@@ -153,7 +155,7 @@ export default function Layout({ title, description, children }) {
                   </Box>
                 </ListItem>
                 <Divider light />
-                {data.categories.map((category) => (
+                {categories.map((category) => (
                   <NextLink
                     key={category}
                     href={`/search?category=${category}`}
@@ -197,7 +199,7 @@ export default function Layout({ title, description, children }) {
         </AppBar>
         <Container className={classes.main}>{children}</Container>
         <footer className={classes.footer}>
-          <Typography>All rights reserved Top 5 Ferretería.</Typography>
+          <Typography>All rights reserved BricoTechs.</Typography>
         </footer>
       </ThemeProvider>
     </div>

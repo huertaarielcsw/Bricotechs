@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   navbar: {
-    backgroundColor: '#203040',
+    backgroundColor: '#ffffff',
     '& a': {
       color: '#ffffff',
       marginLeft: 10,
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     margin: '0 auto',
   },
   navbarButton: {
-    color: '#ffffff',
+    color: '#203040',
     textTransform: 'initial',
   },
   transparentBackgroud: {
@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
   },
   searchForm: {
     border: '1px solid #ffffff',
-    backgroundColor: '#ffffff',
+    backgroundColor: '#203040',
     borderRadius: 5,
   },
   searchInput: {
@@ -99,6 +99,11 @@ const useStyles = makeStyles((theme) => ({
   cardContent: {
     maxHeight: '100%',
     maxWidth: '100%',
+  },
+  siteLogoImg: {
+    maxHeight: '9rem',
+    transition:
+      'height 0.15s linear, width 0.15s linear, max-height 0.15s linear',
   },
 }));
 

@@ -23,6 +23,7 @@ export default function ProductItem({ product }) {
             component="img"
             image={product.image}
             title={product.name}
+            height="50%"
           ></CardMedia>
           <CardContent className={classes.cardContent}>
             <Typography>{product.name}</Typography>
