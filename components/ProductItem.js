@@ -17,7 +17,7 @@ export default function ProductItem({ product }) {
   return (
     <Card className={classes.card}>
       <NextLink href={`/product/${product.slug}`} passHref>
-        <CardActionArea className={classes.actionArea}>
+        <CardActionArea>
           <CardMedia
             className={classes.CardMedia}
             component="img"
@@ -31,12 +31,11 @@ export default function ProductItem({ product }) {
         </CardActionArea>
       </NextLink>
       <CardActions>
-        <Typography>${product.price}</Typography>
+        <Typography>{product.price}€</Typography>
         <Button
           size="small"
           color="primary"
           href="https://www.amazon.es/taladros-atornilladores/b?ie=UTF8&node=3049734031"
-          //onClick={() => addToCartHandler(product)}
         >
           Comprar en Amazon
         </Button>

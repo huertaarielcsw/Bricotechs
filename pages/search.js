@@ -25,15 +25,15 @@ const PAGE_SIZE = 3;
 
 const prices = [
   {
-    name: '$1 to $50',
+    name: '­1€ to 50€',
     value: '1-50',
   },
   {
-    name: '$51 to $200',
+    name: '51€ to 200€',
     value: '51-200',
   },
   {
-    name: '$201 to $1000',
+    name: '201€ to 1000€',
     value: '201-1000',
   },
 ];
@@ -44,12 +44,12 @@ export default function Search(props) {
   const classes = useStyles();
   const router = useRouter();
   const {
-    query = 'all',
-    category = 'all',
-    brand = 'all',
-    price = 'all',
-    rating = 'all',
-    sort = 'featured',
+    query = 'Todos',
+    category = 'Todos',
+    brand = 'Todos',
+    price = 'Todos',
+    rating = 'Todos',
+    sort = '--',
   } = router.query;
   const { products, countProducts, categories, brands, pages } = props;
 
@@ -100,18 +100,6 @@ export default function Search(props) {
     filterSearch({ rating: e.target.value });
   };
 
-  //const { state, dispatch } = useContext(Store);
-  /*const addToCartHandler = async (product) => {
-      const existItem = state.cart.cartItems.find((x) => x._id === product._id);
-      const quantity = existItem ? existItem.quantity + 1 : 1;
-      const { data } = await axios.get(`/api/products/${product._id}`);
-      if (data.countInStock < quantity) {
-        window.alert('Sorry. Product is out of stock');
-        return;
-      }
-      dispatch({ type: 'CART_ADD_ITEM', payload: { ...product, quantity } });
-      router.push('/cart');
-    };*/
   return (
     <Layout title="Search">
       <Grid className={classes.mt1} container spacing={1}>
@@ -119,9 +107,9 @@ export default function Search(props) {
           <List>
             <ListItem>
               <Box className={classes.fullWidth}>
-                <Typography>Categories</Typography>
+                <Typography>Categoría</Typography>
                 <Select fullWidth value={category} onChange={categoryHandler}>
-                  <MenuItem value="all">All</MenuItem>
+                  <MenuItem value="all">Todos</MenuItem>
                   {categories &&
                     categories.map((category) => (
                       <MenuItem key={category} value={category}>
@@ -133,9 +121,9 @@ export default function Search(props) {
             </ListItem>
             <ListItem>
               <Box className={classes.fullWidth}>
-                <Typography>Brands</Typography>
+                <Typography>Marca</Typography>
                 <Select value={brand} onChange={brandHandler} fullWidth>
-                  <MenuItem value="all">All</MenuItem>
+                  <MenuItem value="all">Todos</MenuItem>
                   {brands &&
                     brands.map((brand) => (
                       <MenuItem key={brand} value={brand}>
@@ -147,9 +135,9 @@ export default function Search(props) {
             </ListItem>
             <ListItem>
               <Box className={classes.fullWidth}>
-                <Typography>Prices</Typography>
+                <Typography>Precio</Typography>
                 <Select value={price} onChange={priceHandler} fullWidth>
-                  <MenuItem value="all">All</MenuItem>
+                  <MenuItem value="all">Todos</MenuItem>
                   {prices.map((price) => (
                     <MenuItem key={price.value} value={price.value}>
                       {price.name}
@@ -162,7 +150,7 @@ export default function Search(props) {
               <Box className={classes.fullWidth}>
                 <Typography>Ratings</Typography>
                 <Select value={rating} onChange={ratingHandler} fullWidth>
-                  <MenuItem value="all">All</MenuItem>
+                  <MenuItem value="all">Todos</MenuItem>
                   {ratings.map((rating) => (
                     <MenuItem dispaly="flex" key={rating} value={rating}>
                       <Rating value={rating} readOnly />
@@ -178,16 +166,16 @@ export default function Search(props) {
           <Grid container justifyContent="space-between" alignItems="center">
             <Grid item>
               {products.length === 0 ? 'No' : countProducts} Results
-              {query !== 'all' && query !== '' && ' : ' + query}
-              {category !== 'all' && ' : ' + category}
-              {brand !== 'all' && ' : ' + brand}
-              {price !== 'all' && ' : Price ' + price}
-              {rating !== 'all' && ' : Rating ' + rating + ' & up'}
-              {(query !== 'all' && query !== '') ||
-              category !== 'all' ||
-              brand !== 'all' ||
-              rating !== 'all' ||
-              price !== 'all' ? (
+              {query !== 'Todos' && query !== '' && ' : ' + query}
+              {category !== 'Todos' && ' : ' + category}
+              {brand !== 'Todos' && ' : ' + brand}
+              {price !== 'Todos' && ' : Precio ' + price}
+              {rating !== 'Todos' && ' : Rating ' + rating + ' & up'}
+              {(query !== 'Todos' && query !== '') ||
+              category !== 'Todos' ||
+              brand !== 'Todos' ||
+              rating !== 'Todos' ||
+              price !== 'Todos' ? (
                 <Button onClick={() => router.push('/search')}>
                   <CancelIcon />
                 </Button>
@@ -195,14 +183,13 @@ export default function Search(props) {
             </Grid>
             <Grid item>
               <Typography component="span" className={classes.sort}>
-                Sort by
+                Ordenar por
               </Typography>
               <Select value={sort} onChange={sortHandler}>
-                <MenuItem value="featured">Featured</MenuItem>
-                <MenuItem value="lowest">Price: Low to High</MenuItem>
-                <MenuItem value="highest">Price: High to Low</MenuItem>
-                <MenuItem value="toprated">Customer Reviews</MenuItem>
-                <MenuItem value="newest">Newest Arrivals</MenuItem>
+                <MenuItem value="--">--</MenuItem>
+                <MenuItem value="lowest">Precio: más baratos primero</MenuItem>
+                <MenuItem value="highest">Precio: más caros primero</MenuItem>
+                <MenuItem value="toprated">Valoraciones del cliente</MenuItem>
               </Select>
             </Grid>
           </Grid>
@@ -237,7 +224,7 @@ export async function getServerSideProps({ query }) {
   const searchQuery = query.query || '';
 
   const queryFilter =
-    searchQuery && searchQuery !== 'all'
+    searchQuery && searchQuery !== 'Todos'
       ? {
           name: {
             $regex: searchQuery,
@@ -245,10 +232,10 @@ export async function getServerSideProps({ query }) {
           },
         }
       : {};
-  const categoryFilter = category && category !== 'all' ? { category } : {};
-  const brandFilter = brand && brand !== 'all' ? { brand } : {};
+  const categoryFilter = category && category !== 'Todos' ? { category } : {};
+  const brandFilter = brand && brand !== 'Todos' ? { brand } : {};
   const ratingFilter =
-    rating && rating !== 'all'
+    rating && rating !== 'Todos'
       ? {
           rating: {
             $gte: Number(rating),
@@ -257,7 +244,7 @@ export async function getServerSideProps({ query }) {
       : {};
   // 10-50
   const priceFilter =
-    price && price !== 'all'
+    price && price !== 'Todos'
       ? {
           price: {
             $gte: Number(price.split('-')[0]),
@@ -267,7 +254,7 @@ export async function getServerSideProps({ query }) {
       : {};
 
   const order =
-    sort === 'featured'
+    sort === '--'
       ? { featured: -1 }
       : sort === 'lowest'
       ? { price: 1 }
