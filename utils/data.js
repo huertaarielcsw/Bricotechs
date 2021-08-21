@@ -880,6 +880,58 @@ const data = {
       ],
     },
   ],
+
+  categoriesList: [
+    {
+      name: 'Taladro Percutor',
+      image: '/images/taladrosPercutor/71pXagaxQ1L._AC_SL1500_.jpg',
+    },
+
+    {
+      name: 'Taladros Atornilladores',
+      image: '/images/taladrosAtornillador/81Kr8gxqcsL._AC_SL1500_.jpg',
+    },
+
+    {
+      name: 'Amoladoras',
+      image: '/images/amoladoras/81M6s7FW1uL._AC_SL1500_.jpg',
+    },
+
+    {
+      name: 'Lijadoras',
+      image: '/images/lijadoras/71rSLwgwSgL._AC_SL1500_.jpg',
+    },
+
+    {
+      name: 'Soldadores',
+      image: '/images/soldadores/61lpNdFHpdL._SL1500_.jpg',
+    },
+
+    {
+      name: 'Compresores de aire',
+      image: '/images/compresoresAire/71KbeNPd9rS._AC_SL1500_.jpg',
+    },
+
+    {
+      name: 'Carretillas',
+      image: '/images/carretillas/71GEg+AaGaL._SL1500_.jpg',
+    },
+
+    {
+      name: 'Transpaletas',
+      image: '/images/transpaletas/31IIr8eqWPS.jpg',
+    },
+
+    {
+      name: 'Carretillas Elevadoras',
+      image: '/images/carretillasElevadoras/41eqdNt892L._AC_.jpg',
+    },
+
+    {
+      name: 'Piscinas desmontables',
+      image: '/images/piscinasDesmontables/71hukYKs-KL._AC_SL1500_.jpg',
+    },
+  ],
 };
 
 export default data;

@@ -123,18 +123,14 @@ const useStyles = makeStyles((theme) => ({
     transition: 'all 300ms linear',
   },
   cardMedia: {
-    position: 'absolute',
-    top: '0',
-    right: '0',
-    bottom: '0',
-    left: '0',
-    padding: '1.25rem',
+    maxWidth: '100%',
+    height: '160px',
     //padding: '0.9375rem 1.875rem',
-    //flex: '1 1 auto',
+    flex: '1 1 auto',
   },
   cardContent: {
-    //maxHeight: '100%',
-    //maxWidth: '100%',
+    maxHeight: '100%',
+    maxWidth: '100%',
     padding: '1rem 1.5rem 1.5rem',
   },
   siteLogoImg: {

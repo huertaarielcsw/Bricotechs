@@ -109,7 +109,7 @@ export default function Search(props) {
               <Box className={classes.fullWidth}>
                 <Typography>Categoría</Typography>
                 <Select fullWidth value={category} onChange={categoryHandler}>
-                  <MenuItem value="all">Todos</MenuItem>
+                  <MenuItem value="Todos">Todos</MenuItem>
                   {categories &&
                     categories.map((category) => (
                       <MenuItem key={category} value={category}>
@@ -123,7 +123,7 @@ export default function Search(props) {
               <Box className={classes.fullWidth}>
                 <Typography>Marca</Typography>
                 <Select value={brand} onChange={brandHandler} fullWidth>
-                  <MenuItem value="all">Todos</MenuItem>
+                  <MenuItem value="Todos">Todos</MenuItem>
                   {brands &&
                     brands.map((brand) => (
                       <MenuItem key={brand} value={brand}>
@@ -137,7 +137,7 @@ export default function Search(props) {
               <Box className={classes.fullWidth}>
                 <Typography>Precio</Typography>
                 <Select value={price} onChange={priceHandler} fullWidth>
-                  <MenuItem value="all">Todos</MenuItem>
+                  <MenuItem value="Todos">Todos</MenuItem>
                   {prices.map((price) => (
                     <MenuItem key={price.value} value={price.value}>
                       {price.name}
@@ -150,7 +150,7 @@ export default function Search(props) {
               <Box className={classes.fullWidth}>
                 <Typography>Ratings</Typography>
                 <Select value={rating} onChange={ratingHandler} fullWidth>
-                  <MenuItem value="all">Todos</MenuItem>
+                  <MenuItem value="Todos">Todos</MenuItem>
                   {ratings.map((rating) => (
                     <MenuItem dispaly="flex" key={rating} value={rating}>
                       <Rating value={rating} readOnly />
@@ -195,7 +195,7 @@ export default function Search(props) {
           </Grid>
           <Grid className={classes.mt1} container spacing={3}>
             {products.map((product) => (
-              <Grid item md={4} key={product.name}>
+              <Grid container item md={4} xs={6} key={product.name}>
                 <ProductItem product={product} />
               </Grid>
             ))}
