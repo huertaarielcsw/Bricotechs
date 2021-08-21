@@ -88,17 +88,42 @@ const useStyles = makeStyles((theme) => ({
   sort: {
     marginRight: 5,
   },
+  actionArea: {
+    borderRadius: 16,
+    transition: '0.2s',
+    '&:hover': {
+      transform: 'scale(1.1)',
+    },
+  },
   card: {
-    height: '100%',
-    display: 'flex',
-    flexDirection: 'column',
+    //display: 'flex',
+    //flexDirection: 'column',
+    minWidth: 256,
+    borderRadius: 16,
+    boxShadow: 'none',
+    '&:hover': {
+      boxShadow: `0 6px 12px 0`,
+    },
+    position: 'unset',
   },
   cardMedia: {
-    paddingTop: '56.25%', // 16:9
+    width: '100%',
+    height: 'unset',
+    position: 'relative',
+    //verticalAlign: 'middle',
+    //top: '50%',
+    //position: 'relative',
+    //WebkitTransform: ' translateY(-50%)',
+    //msTransform: 'translateY(-50%)',
+    //transform: 'translateY(-50%)',
+    objectFit: 'contain',
+    //flex: '0.75px',
+    //paddingTop: '56.25%', // 16:9
   },
   cardContent: {
-    maxHeight: '100%',
-    maxWidth: '100%',
+    //maxHeight: '100%',
+    //maxWidth: '100%',
+    padding: '1rem 1.5rem 1.5rem',
   },
   siteLogoImg: {
     maxHeight: '9rem',

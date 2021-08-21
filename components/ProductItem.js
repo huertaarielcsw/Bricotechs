@@ -17,13 +17,12 @@ export default function ProductItem({ product }) {
   return (
     <Card className={classes.card}>
       <NextLink href={`/product/${product.slug}`} passHref>
-        <CardActionArea>
+        <CardActionArea className={classes.actionArea}>
           <CardMedia
-            className={classes.cardMedia}
+            className={classes.CardMedia}
             component="img"
             image={product.image}
             title={product.name}
-            height="50%"
           ></CardMedia>
           <CardContent className={classes.cardContent}>
             <Typography>{product.name}</Typography>
@@ -36,6 +35,7 @@ export default function ProductItem({ product }) {
         <Button
           size="small"
           color="primary"
+          href="https://www.amazon.es/taladros-atornilladores/b?ie=UTF8&node=3049734031"
           //onClick={() => addToCartHandler(product)}
         >
           Comprar en Amazon

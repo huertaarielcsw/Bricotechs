@@ -12,7 +12,7 @@ export default function Home(props) {
         <h1>Productos</h1>
         <Grid
           container
-          spacing={3}
+          spacing={4}
           justifyContent="space-evenly"
           alignItems="baseline"
         >
