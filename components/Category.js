@@ -9,7 +9,7 @@ import React from 'react';
 import NextLink from 'next/link';
 import useStyles from '../utils/styles';
 
-export default function Cards({ category }) {
+export default function Category({ category }) {
   const classes = useStyles();
   return (
     <Card className={classes.card}>

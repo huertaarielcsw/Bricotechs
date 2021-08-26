@@ -14,7 +14,7 @@ export default function Home(props) {
         <h1>Categorías</h1>
         <Grid container spacing={2}>
           {data.categoriesList.map((category) => (
-            <Grid item md={2} xs={6} key={category.name}>
+            <Grid item container md={2} xs={6} key={category.name}>
               <Category category={category} />
             </Grid>
           ))}

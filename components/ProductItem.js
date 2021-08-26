@@ -20,11 +20,11 @@ export default function ProductItem({ product }) {
         <CardActionArea>
           <CardMedia
             className={classes.CardMedia}
-            component="img"
+            component={'img'}
             image={product.image}
             title={product.name}
-          ></CardMedia>
-          <CardContent className={classes.cardContent}>
+          />
+          <CardContent>
             <Typography>{product.name}</Typography>
             <Rating value={product.rating} precision={0.5} readOnly></Rating>
           </CardContent>
