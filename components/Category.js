@@ -13,7 +13,7 @@ export default function Category({ category }) {
   const classes = useStyles();
   return (
     <Card className={classes.card}>
-      <NextLink href={`/search?category=${category.name}`} passHref>
+      <NextLink href={`/category/${category.slug}`} passHref>
         <CardActionArea>
           <CardMedia
             className={classes.CardMedia}
