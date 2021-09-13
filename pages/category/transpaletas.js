@@ -27,48 +27,29 @@ function createData(name, _1, _2, _3, _4, _5) {
 const rows = [
   createData(
     'Calificación de cliente',
-    <Rating value={4.3} precision={0.5} readOnly></Rating>,
+    <Rating value={0.0} precision={0.5} readOnly></Rating>,
     <Rating value={4.4} precision={0.5} readOnly></Rating>,
-    <Rating value={4.3} precision={0.5} readOnly></Rating>,
-    <Rating value={4.1} precision={0.5} readOnly></Rating>,
-    <Rating value={4.4} precision={0.5} readOnly></Rating>
+    <Rating value={5.0} precision={0.5} readOnly></Rating>,
+    <Rating value={4.2} precision={0.5} readOnly></Rating>,
+    <Rating value={4.8} precision={0.5} readOnly></Rating>
   ),
-  createData('Precio', '24,99 €', '54,99 €', '45,98 €', '61,99 €', '24,49 €'),
+  createData(
+    'Precio',
+    '369,45 €',
+    '345,00 €',
+    '409,00 €',
+    '388,50 €',
+    '435,13 €'
+  ),
   createData(
     'Dimensiones Artículo	',
-    '18.5 x 14.5 x 8 cm',
-    '25.8 x 23 x 9 cm',
-    '28 x 25 x 8  cm',
-    '30 x 10 x 25 cm',
-    '20.6 x 18.8 x 6.5 cm'
+    '‎150 x 54 x 50 cm',
+    '-',
+    '-',
+    '152 x 54 x 44 cm',
+    '-'
   ),
-  createData(
-    'Peso Artículo',
-    '0.75 kg',
-    '2.2 kg',
-    '‎2.32 kg',
-    '‎4.11 kg',
-    '0.68 kg'
-  ),
-  createData(
-    'Voltaje',
-    '3.6 Voltios',
-    '12 Voltios',
-    '12 Voltios',
-    '20 Voltios',
-    '3.6 Voltios'
-  ),
-  createData('Velocidad', '180 RPM', '1500 RPM', '‎1350 RPM', '-', '-'),
-  createData(
-    'Fuente de alimentación',
-    '‎‎Baterías',
-    '‎Baterías',
-    'Baterías',
-    'Eléctrica_sin_cable',
-    'Baterías'
-  ),
-  createData('Incluye baterías', 'Sí', 'Sí', 'Sí', '‎Sí', '‎Sí'),
-  createData('Necesita baterías', 'No', 'Sí', 'No', '‎Sí', '‎No'),
+  createData('Peso Artículo', '80 kg', '‎70 kg', '‎63 kg', '‎62 kg', '72 kg'),
 ];
 
 const useStyles = makeStyles(({ breakpoints, spacing }) => ({
@@ -128,7 +109,7 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
   },
 }));
 
-export default function TaladroAtornilladorScreen(props) {
+export default function TranspaletaScreen(props) {
   const { products } = props;
   const styles = useStyles();
   const { button: buttonStyles, ...contentStyles } =
@@ -137,22 +118,22 @@ export default function TaladroAtornilladorScreen(props) {
     <Layout>
       <header>
         <div>
-          <h1>Taladro Atornillador</h1>
+          <h1>Transpaletas</h1>
         </div>
       </header>
       <div>
         <Typography variant="body1" gutterBottom>
-          Junto con los <strong>taladros percutores</strong> son, sin duda, los
-          más utilizados. La principal función de estos tipos de{' '}
-          <strong>taladros</strong> es la de{' '}
-          <strong>atornillar y desatornillar</strong>. La agilidad del trabajo
-          se ve positivamente influenciada por estos <strong>taladros</strong>,
-          ya que permite
-          <strong>desatornillar y atornillar</strong> cualquier tipo de tornillo
-          y, y por tanto, trabajar mucho más rápidamente. Tanto el{' '}
-          <strong>taladro percutor</strong> como el
-          <strong>atornillador</strong> permiten obtener amplias opciones de
-          taladro dependiendo de los tipos de brocas que utilices.
+          En los almacenes modernos, el medio más simple y más ampliamente
+          utilizado es la <strong>transpaleta</strong>. Es un equipo de
+          transporte, no de elevación, que se maneja de forma manual en la
+          mayoría de los casos. Estas máquinas son muy versátiles, ya que se
+          pueden emplear para realizar múltiples trabajos tales como la carga y
+          descarga de camiones, el traslado en distancias cortas de palets y
+          contenedores, o servir como medios auxiliares de apoyo en las
+          operaciones de picking. En general, las <strong>transpaletas</strong>{' '}
+          y en especial las manuales son unos elementos imprescindibles y de
+          escaso coste de adquisición que resuelven situaciones en todas las
+          actividades de almacenaje.
         </Typography>
       </div>
       <Divider light />
@@ -198,7 +179,7 @@ export default function TaladroAtornilladorScreen(props) {
 
       <Divider light />
       <div>
-        <h2>Los 5 taladros atornilladores más vendidos</h2>
+        <h2>Las 5 transpaletas más vendidas</h2>
         <Grid container spacing={3}>
           {products.map((product) => (
             <Grid container item md={4} key={product.name}>
@@ -216,19 +197,34 @@ export default function TaladroAtornilladorScreen(props) {
             <Card className={cx(styles.root)}>
               <CardMedia
                 className={styles.media}
-                image={
-                  '/images/taladrosAtornillador/81Kr8gxqcsL._AC_SL1500_.jpg'
-                }
+                image={'/images/transpaletas/51-a-qhL++L._AC_SL1372_.jpg'}
               />
               <CardContent>
                 <TextInfoContent
                   classes={contentStyles}
-                  overline={'Excelente producto de muy buena calidad'}
+                  overline={'-'}
+                  heading={'WOLFPACK LINEA PROFESIONAL Transpaleta De Almacen'}
+                  body={'-'}
+                />
+                <Button className={buttonStyles}>Read more</Button>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid container item md={12}>
+            <Card className={cx(styles.root)}>
+              <CardMedia
+                className={styles.media}
+                image={'/images/transpaletas/51aa-CUFuKL._AC_SL1050_.jpg'}
+              />
+              <CardContent>
+                <TextInfoContent
+                  classes={contentStyles}
+                  overline={' Transpaleta Genial'}
                   heading={
-                    'Destornillador Eléctrico 6N.m, HYCHIKA Atornillador Eléctrico Inalámbrico 3.6v Batería 2000mAh (Máximo Par 6 N.m) LED Luz, Mandril Magnético, Cargador con Cable 3.5mm, 20 Accesorios'
+                    'Ayerbe transpaletas - Transpaleta ay-2500-thn ruedas nylon'
                   }
                   body={
-                    'Destaco sobre todo la potencia para atornillar/desatornillar que tiene el aparato, cargándose solo a través de USB (yo lo he hecho con un adaptador a corriente). También destacar el numero de diferentes cabezales que tiene, y la adaptación para poder atornillar en 35/40º o recto. Por ultimo también merece mención el tiempo que permanece funcionando con una sola carga de USB, y las dos bombillas LED que posee.'
+                    'Envío muy rápido, incluso antes de su posible fecha de entrega. Muy buena y robusta transpaleta'
                   }
                 />
                 <Button className={buttonStyles}>Read more</Button>
@@ -239,19 +235,32 @@ export default function TaladroAtornilladorScreen(props) {
             <Card className={cx(styles.root)}>
               <CardMedia
                 className={styles.media}
-                image={
-                  '/images/taladrosAtornillador/81NUfvNm4wL._AC_SL1500_.jpg'
-                }
+                image={'/images/transpaletas/31IIr8eqWPS.jpg'}
               />
               <CardContent>
                 <TextInfoContent
                   classes={contentStyles}
-                  overline={' Útil para el día a día'}
-                  heading={
-                    'Taladro Atornillador 12V con 2 Baterías, HYCHIKA Destornillador Eléctrico, 30N.m Par Máx, 1.5 Ah Batería, 1 Hora de Carga Rápida, 6PCS Puntas y HSS Brocas, 5PCS Llaves de vaso, 4PCS Brocas de Madera'
-                  }
+                  overline={'-'}
+                  heading={'Transpaleta Manual 2500 kg'}
+                  body={'-'}
+                />
+                <Button className={buttonStyles}>Read more</Button>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid container item md={12}>
+            <Card className={cx(styles.root)}>
+              <CardMedia
+                className={styles.media}
+                image={'/images/transpaletas/61dkfU2y7IL._AC_SL1500_.jpg'}
+              />
+              <CardContent>
+                <TextInfoContent
+                  classes={contentStyles}
+                  overline={' Hace su funcion!'}
+                  heading={'Einhell palé Transpaleta TC de PT 2500'}
                   body={
-                    'Ha sido una de las mejores compras que he hecho. Los tornillos se ponen en un segundo y casi sin esfuerzo. La batería de momento me ha durado bastante, además voy utilizando las dos que vienen para que no se me degrade ninguna de ellas por no utlizarla. Además también he podido utilizarlo para hacer taladros en una mesa de madera. No lo recomendaría para hacer taladros en la pared ya que no creo que tenga la potencia suficiente. Para uso en madera y materiales más blandos está bien.'
+                    'Pues yo estoy encantado con la transpaleta, para el uso que la quería cumple de sobras. Como punto fuerte las Ruedas que son de goma, no de nylon o plastico duro, por lo que no hace ruido al deslazarla.'
                   }
                 />
                 <Button className={buttonStyles}>Read more</Button>
@@ -262,65 +271,15 @@ export default function TaladroAtornilladorScreen(props) {
             <Card className={cx(styles.root)}>
               <CardMedia
                 className={styles.media}
-                image={
-                  '/images/taladrosAtornillador/71iF7VUX5aL._AC_SL1500_.jpg'
-                }
+                image={'/images/transpaletas/51tUVKou28L._AC_SL1050_.jpg'}
               />
               <CardContent>
                 <TextInfoContent
                   classes={contentStyles}
-                  overline={' Buen atornillador.'}
-                  heading={
-                    'Taladro Atornillador 2 Baterías, GOXAWEE 100Pcs Kit Taladro Bateria/Destornillador Eléctrico (2 Baterías de Litio 1500mAh, 30N.m Par Máx, 2 Velocidades, 10mm Portabrocas Automático)'
-                  }
+                  overline={'Calidad precio de 10'}
+                  heading={'Ayerbe M110167 - Traspaleta '}
                   body={
-                    'Atornillador muy completo, tienes todo lo que puedes a llegar necesitar en casa, ya que personalmente creo que es para eso, bricolaje amateur, yo lo he usado y comprado para el montaje de una habitación y me lo ha hecho fácil.'
-                  }
-                />
-                <Button className={buttonStyles}>Read more</Button>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid container item md={12}>
-            <Card className={cx(styles.root)}>
-              <CardMedia
-                className={styles.media}
-                image={
-                  '/images/taladrosAtornillador/61cfqqH5u7S._AC_SL1000_.jpg'
-                }
-              />
-              <CardContent>
-                <TextInfoContent
-                  classes={contentStyles}
-                  overline={' Buen kit completo'}
-                  heading={
-                    'Taladro Atornillador 21V, TEENO 41Pcs Kit Destornillador Eléctrico (2 Baterías de Litio 1500mAh, 40N.m Par Máx, 2 Velocidades, 10mm Portabrocas Automatico)'
-                  }
-                  body={
-                    'No soy muy dado a estas cosas, pero lo compré a un buen precio y tenía todo lo que necesitaba y más. Funcionó perfectamente y va con dos baterías y pude trabajar tranquilamente con solo una. Al menos, para tenerlo en casa por si acaso hace falta, es perfecto. Puede que para alguien que le dé un uso fuerte no sea tan buena.'
-                  }
-                />
-                <Button className={buttonStyles}>Read more</Button>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid container item md={12}>
-            <Card className={cx(styles.root)}>
-              <CardMedia
-                className={styles.media}
-                image={
-                  '/images/taladrosAtornillador/71ITLPRvwyL._AC_SL1500_.jpg'
-                }
-              />
-              <CardContent>
-                <TextInfoContent
-                  classes={contentStyles}
-                  overline={' Un todo-terreno para el hogar'}
-                  heading={
-                    'BLACK+DECKER BCK24D2S-QW - Taladro Percutor 18V (21.000 ipm) y amoladora 125 mm 18V, con 2 baterías litio 2Ah y bolsa de transporte'
-                  }
-                  body={
-                    'Puede parecer una tontería dudar si se necesita, pero es realmente muy util para conseguir atornillar o desatornillar tornillos sin apenas esfuerzo. Es "salud" para tu muñeca, y lo hace todo más fácil y rápido. Por poner una comparativa, es como si montas claras a mano o lo haces con un accesorio de tu batidora. Se puede hacer de ambas formas, pero hay diferencia en la comodidad.'
+                    'Perfecto y calidad precio inmejorable, transpalet de 10!'
                   }
                 />
                 <Button className={buttonStyles}>Read more</Button>
@@ -334,7 +293,7 @@ export default function TaladroAtornilladorScreen(props) {
 }
 
 export async function getServerSideProps() {
-  const category = 'Taladros Atornilladores';
+  const category = 'Transpaletas';
   const categoryFilter = { category };
   await db.connect();
   const products = await Product.find({ ...categoryFilter }).lean();

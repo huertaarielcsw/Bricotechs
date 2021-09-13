@@ -27,48 +27,55 @@ function createData(name, _1, _2, _3, _4, _5) {
 const rows = [
   createData(
     'Calificación de cliente',
-    <Rating value={4.3} precision={0.5} readOnly></Rating>,
+    <Rating value={4.5} precision={0.5} readOnly></Rating>,
+    <Rating value={4.7} precision={0.5} readOnly></Rating>,
     <Rating value={4.4} precision={0.5} readOnly></Rating>,
-    <Rating value={4.3} precision={0.5} readOnly></Rating>,
-    <Rating value={4.1} precision={0.5} readOnly></Rating>,
+    <Rating value={4.4} precision={0.5} readOnly></Rating>,
     <Rating value={4.4} precision={0.5} readOnly></Rating>
   ),
-  createData('Precio', '24,99 €', '54,99 €', '45,98 €', '61,99 €', '24,49 €'),
+  createData('Precio', '24,93 €', '79,00 €', '34,00 €', '35,99 €', '89,99 €'),
   createData(
     'Dimensiones Artículo	',
-    '18.5 x 14.5 x 8 cm',
-    '25.8 x 23 x 9 cm',
-    '28 x 25 x 8  cm',
-    '30 x 10 x 25 cm',
-    '20.6 x 18.8 x 6.5 cm'
+    '32.5 x 12 x 11.5 cm',
+    '35.5 x 11.5 x 12 cm',
+    '27.1 x 22.5 x 11.3  cm',
+    '‎32.2 x 14.4 x 12.5  cm',
+    '‎35.7 x 20 x 16.8 cm'
   ),
   createData(
     'Peso Artículo',
-    '0.75 kg',
-    '2.2 kg',
-    '‎2.32 kg',
-    '‎4.11 kg',
-    '0.68 kg'
+    '1.85 kg',
+    '1.61 kg',
+    '‎2.00 kg',
+    '‎3.26 kg',
+    '3.83 kg'
   ),
   createData(
     'Voltaje',
-    '3.6 Voltios',
-    '12 Voltios',
-    '12 Voltios',
-    '20 Voltios',
-    '3.6 Voltios'
+    '-',
+    '230 Voltios',
+    '230 Voltios',
+    '-',
+    '‎18 Voltios (CC)'
   ),
-  createData('Velocidad', '180 RPM', '1500 RPM', '‎1350 RPM', '-', '-'),
+  createData(
+    'Potencia eléctrica',
+    '‎710 vatios',
+    '720 vatios',
+    '‎850 vatios',
+    '‎860 vatios',
+    '‎72 vatios'
+  ),
   createData(
     'Fuente de alimentación',
-    '‎‎Baterías',
-    '‎Baterías',
-    'Baterías',
-    'Eléctrica_sin_cable',
-    'Baterías'
+    '‎‎-',
+    '‎‎Cable eléctrico',
+    'Cable eléctrico',
+    '-',
+    '‎Funciona con Batería 18V'
   ),
-  createData('Incluye baterías', 'Sí', 'Sí', 'Sí', '‎Sí', '‎Sí'),
-  createData('Necesita baterías', 'No', 'Sí', 'No', '‎Sí', '‎No'),
+  createData('Incluye baterías', 'No', 'No', 'No', '‎No', '‎Sí'),
+  createData('Necesita baterías', 'No', 'No', 'No', '‎No', '‎No'),
 ];
 
 const useStyles = makeStyles(({ breakpoints, spacing }) => ({
@@ -128,7 +135,7 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
   },
 }));
 
-export default function TaladroAtornilladorScreen(props) {
+export default function AmoladoraScreen(props) {
   const { products } = props;
   const styles = useStyles();
   const { button: buttonStyles, ...contentStyles } =
@@ -137,22 +144,26 @@ export default function TaladroAtornilladorScreen(props) {
     <Layout>
       <header>
         <div>
-          <h1>Taladro Atornillador</h1>
+          <h1>Amoladoras</h1>
         </div>
       </header>
       <div>
         <Typography variant="body1" gutterBottom>
-          Junto con los <strong>taladros percutores</strong> son, sin duda, los
-          más utilizados. La principal función de estos tipos de{' '}
-          <strong>taladros</strong> es la de{' '}
-          <strong>atornillar y desatornillar</strong>. La agilidad del trabajo
-          se ve positivamente influenciada por estos <strong>taladros</strong>,
-          ya que permite
-          <strong>desatornillar y atornillar</strong> cualquier tipo de tornillo
-          y, y por tanto, trabajar mucho más rápidamente. Tanto el{' '}
-          <strong>taladro percutor</strong> como el
-          <strong>atornillador</strong> permiten obtener amplias opciones de
-          taladro dependiendo de los tipos de brocas que utilices.
+          A grandes rasgos podemos afirmar que la{' '}
+          <strong>amoladora eléctrica</strong> nos sirve para{' '}
+          <strong>lijar, abrillantar, pulir, desbastar y cortar</strong>{' '}
+          determinados materiales ya sean blandos o duros. Como hemos mencionado
+          anteriormente, los usos de la <strong>amoladora</strong> son muy
+          diversos y es que es una herramienta muy versátil. La{' '}
+          <strong>amoladora</strong> nos permite realizar todo tipo de trabajos
+          a nivel <strong>doméstico o profesional</strong> en función de los
+          discos que usemos así como de la potencia y el motor de la propia
+          herramienta eléctrica. Tendrás que tener en cuenta qué tipo de
+          <strong>amoladora</strong> se adapta mejor a tus necesidades, si la{' '}
+          <strong>amoladora eléctrica</strong>
+          que se suele utilizar más para trabajos industriales, o la{' '}
+          <strong>amoladora</strong> a batería destinada para labores de{' '}
+          <strong>bricolaje casero</strong>.
         </Typography>
       </div>
       <Divider light />
@@ -198,7 +209,7 @@ export default function TaladroAtornilladorScreen(props) {
 
       <Divider light />
       <div>
-        <h2>Los 5 taladros atornilladores más vendidos</h2>
+        <h2>Las 5 amoladoras más vendidas</h2>
         <Grid container spacing={3}>
           {products.map((product) => (
             <Grid container item md={4} key={product.name}>
@@ -216,19 +227,17 @@ export default function TaladroAtornilladorScreen(props) {
             <Card className={cx(styles.root)}>
               <CardMedia
                 className={styles.media}
-                image={
-                  '/images/taladrosAtornillador/81Kr8gxqcsL._AC_SL1500_.jpg'
-                }
+                image={'/images/amoladoras/81M6s7FW1uL._AC_SL1500_.jpg'}
               />
               <CardContent>
                 <TextInfoContent
                   classes={contentStyles}
-                  overline={'Excelente producto de muy buena calidad'}
+                  overline={'amoladora casi regalada'}
                   heading={
-                    'Destornillador Eléctrico 6N.m, HYCHIKA Atornillador Eléctrico Inalámbrico 3.6v Batería 2000mAh (Máximo Par 6 N.m) LED Luz, Mandril Magnético, Cargador con Cable 3.5mm, 20 Accesorios'
+                    'Black+Decker BEG010-QS - Amoladora 115mm, 710W, 12.000 rpm'
                   }
                   body={
-                    'Destaco sobre todo la potencia para atornillar/desatornillar que tiene el aparato, cargándose solo a través de USB (yo lo he hecho con un adaptador a corriente). También destacar el numero de diferentes cabezales que tiene, y la adaptación para poder atornillar en 35/40º o recto. Por ultimo también merece mención el tiempo que permanece funcionando con una sola carga de USB, y las dos bombillas LED que posee.'
+                    'Perfecta en relación calidad precio. El resto cumple sobradamente para pequeños trabajos de bricolaje.'
                   }
                 />
                 <Button className={buttonStyles}>Read more</Button>
@@ -239,19 +248,17 @@ export default function TaladroAtornilladorScreen(props) {
             <Card className={cx(styles.root)}>
               <CardMedia
                 className={styles.media}
-                image={
-                  '/images/taladrosAtornillador/81NUfvNm4wL._AC_SL1500_.jpg'
-                }
+                image={'/images/amoladoras/81HD9lo7FrL._AC_SL1500_.jpg'}
               />
               <CardContent>
                 <TextInfoContent
                   classes={contentStyles}
-                  overline={' Útil para el día a día'}
+                  overline={' Calidad precio'}
                   heading={
-                    'Taladro Atornillador 12V con 2 Baterías, HYCHIKA Destornillador Eléctrico, 30N.m Par Máx, 1.5 Ah Batería, 1 Hora de Carga Rápida, 6PCS Puntas y HSS Brocas, 5PCS Llaves de vaso, 4PCS Brocas de Madera'
+                    'Bosch Professional GWS 7-115 E - Amoladora angular (720 W, 2800 – 11000 rpm, Ø Disco 115 mm, protección rearranque, en caja)'
                   }
                   body={
-                    'Ha sido una de las mejores compras que he hecho. Los tornillos se ponen en un segundo y casi sin esfuerzo. La batería de momento me ha durado bastante, además voy utilizando las dos que vienen para que no se me degrade ninguna de ellas por no utlizarla. Además también he podido utilizarlo para hacer taladros en una mesa de madera. No lo recomendaría para hacer taladros en la pared ya que no creo que tenga la potencia suficiente. Para uso en madera y materiales más blandos está bien.'
+                    'Me gustó todo, no hay nada que objetar sobre esta herramienta que a mi me vino sin ningún problema y funcionando perfectamente. '
                   }
                 />
                 <Button className={buttonStyles}>Read more</Button>
@@ -262,19 +269,17 @@ export default function TaladroAtornilladorScreen(props) {
             <Card className={cx(styles.root)}>
               <CardMedia
                 className={styles.media}
-                image={
-                  '/images/taladrosAtornillador/71iF7VUX5aL._AC_SL1500_.jpg'
-                }
+                image={'/images/amoladoras/51lNAaPVRIL._AC_SL1464_.jpg'}
               />
               <CardContent>
                 <TextInfoContent
                   classes={contentStyles}
-                  overline={' Buen atornillador.'}
+                  overline={'Relacion calidad precio'}
                   heading={
-                    'Taladro Atornillador 2 Baterías, GOXAWEE 100Pcs Kit Taladro Bateria/Destornillador Eléctrico (2 Baterías de Litio 1500mAh, 30N.m Par Máx, 2 Velocidades, 10mm Portabrocas Automático)'
+                    'Einhell Amoladora angular TC-AG 125 (850W, 12.000 1/min de velocidad, disco de 125mm-ø, protector de disco, bloqueo de husillo, cabezal de engranaje plano de aluminio)'
                   }
                   body={
-                    'Atornillador muy completo, tienes todo lo que puedes a llegar necesitar en casa, ya que personalmente creo que es para eso, bricolaje amateur, yo lo he usado y comprado para el montaje de una habitación y me lo ha hecho fácil.'
+                    'Tiene buena potencia y no vibra mucho,para uso doméstico va perfecta'
                   }
                 />
                 <Button className={buttonStyles}>Read more</Button>
@@ -285,19 +290,17 @@ export default function TaladroAtornilladorScreen(props) {
             <Card className={cx(styles.root)}>
               <CardMedia
                 className={styles.media}
-                image={
-                  '/images/taladrosAtornillador/61cfqqH5u7S._AC_SL1000_.jpg'
-                }
+                image={'/images/amoladoras/81OvGYvmurL._AC_SL1500_.jpg'}
               />
               <CardContent>
                 <TextInfoContent
                   classes={contentStyles}
-                  overline={' Buen kit completo'}
+                  overline={'  Robusta'}
                   heading={
-                    'Taladro Atornillador 21V, TEENO 41Pcs Kit Destornillador Eléctrico (2 Baterías de Litio 1500mAh, 40N.m Par Máx, 2 Velocidades, 10mm Portabrocas Automatico)'
+                    'Amoladora Angular Profesional,Tilswall 860W 12000 RPM 125mm,Amoladora Angular con 3 Discos de Corte y 2 Esmerilado,Cubierta Protectora para Esmerilado/Pulido/Corte'
                   }
                   body={
-                    'No soy muy dado a estas cosas, pero lo compré a un buen precio y tenía todo lo que necesitaba y más. Funcionó perfectamente y va con dos baterías y pude trabajar tranquilamente con solo una. Al menos, para tenerlo en casa por si acaso hace falta, es perfecto. Puede que para alguien que le dé un uso fuerte no sea tan buena.'
+                    'Muy robusta y suave al corte. La pillè en oferta y de momento va de lujo. '
                   }
                 />
                 <Button className={buttonStyles}>Read more</Button>
@@ -308,19 +311,17 @@ export default function TaladroAtornilladorScreen(props) {
             <Card className={cx(styles.root)}>
               <CardMedia
                 className={styles.media}
-                image={
-                  '/images/taladrosAtornillador/71ITLPRvwyL._AC_SL1500_.jpg'
-                }
+                image={'/images/amoladoras/81ByBSsvBOL._AC_SL1500_.jpg'}
               />
               <CardContent>
                 <TextInfoContent
                   classes={contentStyles}
-                  overline={' Un todo-terreno para el hogar'}
+                  overline={'  Recomiendo esta amoladora'}
                   heading={
-                    'BLACK+DECKER BCK24D2S-QW - Taladro Percutor 18V (21.000 ipm) y amoladora 125 mm 18V, con 2 baterías litio 2Ah y bolsa de transporte'
+                    'Amoladora Angular 18V, HYCHIKA Radial Angular Inalámbrico, 8500RPM con 4.0Ah Batería, 4*Discos para Lijar y 1*para Cortar, Mango Ajustable, Cargador Rápido, Amoladora Angular a Batería para Multiusar'
                   }
                   body={
-                    'Puede parecer una tontería dudar si se necesita, pero es realmente muy util para conseguir atornillar o desatornillar tornillos sin apenas esfuerzo. Es "salud" para tu muñeca, y lo hace todo más fácil y rápido. Por poner una comparativa, es como si montas claras a mano o lo haces con un accesorio de tu batidora. Se puede hacer de ambas formas, pero hay diferencia en la comodidad.'
+                    'Como siempre, hychika marca de calidad y fiable a precio de mortales...'
                   }
                 />
                 <Button className={buttonStyles}>Read more</Button>
@@ -334,7 +335,7 @@ export default function TaladroAtornilladorScreen(props) {
 }
 
 export async function getServerSideProps() {
-  const category = 'Taladros Atornilladores';
+  const category = 'Amoladoras';
   const categoryFilter = { category };
   await db.connect();
   const products = await Product.find({ ...categoryFilter }).lean();

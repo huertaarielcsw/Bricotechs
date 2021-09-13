@@ -27,48 +27,29 @@ function createData(name, _1, _2, _3, _4, _5) {
 const rows = [
   createData(
     'Calificación de cliente',
-    <Rating value={4.3} precision={0.5} readOnly></Rating>,
+    <Rating value={4.5} precision={0.5} readOnly></Rating>,
     <Rating value={4.4} precision={0.5} readOnly></Rating>,
-    <Rating value={4.3} precision={0.5} readOnly></Rating>,
     <Rating value={4.1} precision={0.5} readOnly></Rating>,
-    <Rating value={4.4} precision={0.5} readOnly></Rating>
+    <Rating value={4.0} precision={0.5} readOnly></Rating>,
+    <Rating value={4.0} precision={0.5} readOnly></Rating>
   ),
-  createData('Precio', '24,99 €', '54,99 €', '45,98 €', '61,99 €', '24,49 €'),
+  createData('Precio', '49,90 €', '75,73 €', '27,99 €', '48,67 €', '69,99 €'),
   createData(
     'Dimensiones Artículo	',
-    '18.5 x 14.5 x 8 cm',
-    '25.8 x 23 x 9 cm',
-    '28 x 25 x 8  cm',
-    '30 x 10 x 25 cm',
-    '20.6 x 18.8 x 6.5 cm'
+    '‎110 x 43 x 39 cm',
+    '‎119 x 51 x 46 cm',
+    '42.9 x 29.3 x 9.1 cm',
+    '‎23.5 x 8 x 44.5 cm',
+    '‎60 x 45 x 109 cm'
   ),
   createData(
     'Peso Artículo',
-    '0.75 kg',
-    '2.2 kg',
-    '‎2.32 kg',
-    '‎4.11 kg',
-    '0.68 kg'
+    '3.2 kg',
+    '13.4 kg',
+    '‎1.56 kg',
+    '‎1.28 kg',
+    '11.7 kg'
   ),
-  createData(
-    'Voltaje',
-    '3.6 Voltios',
-    '12 Voltios',
-    '12 Voltios',
-    '20 Voltios',
-    '3.6 Voltios'
-  ),
-  createData('Velocidad', '180 RPM', '1500 RPM', '‎1350 RPM', '-', '-'),
-  createData(
-    'Fuente de alimentación',
-    '‎‎Baterías',
-    '‎Baterías',
-    'Baterías',
-    'Eléctrica_sin_cable',
-    'Baterías'
-  ),
-  createData('Incluye baterías', 'Sí', 'Sí', 'Sí', '‎Sí', '‎Sí'),
-  createData('Necesita baterías', 'No', 'Sí', 'No', '‎Sí', '‎No'),
 ];
 
 const useStyles = makeStyles(({ breakpoints, spacing }) => ({
@@ -128,7 +109,7 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
   },
 }));
 
-export default function TaladroAtornilladorScreen(props) {
+export default function CarretillaScreen(props) {
   const { products } = props;
   const styles = useStyles();
   const { button: buttonStyles, ...contentStyles } =
@@ -137,22 +118,20 @@ export default function TaladroAtornilladorScreen(props) {
     <Layout>
       <header>
         <div>
-          <h1>Taladro Atornillador</h1>
+          <h1>Carretillas</h1>
         </div>
       </header>
       <div>
         <Typography variant="body1" gutterBottom>
-          Junto con los <strong>taladros percutores</strong> son, sin duda, los
-          más utilizados. La principal función de estos tipos de{' '}
-          <strong>taladros</strong> es la de{' '}
-          <strong>atornillar y desatornillar</strong>. La agilidad del trabajo
-          se ve positivamente influenciada por estos <strong>taladros</strong>,
-          ya que permite
-          <strong>desatornillar y atornillar</strong> cualquier tipo de tornillo
-          y, y por tanto, trabajar mucho más rápidamente. Tanto el{' '}
-          <strong>taladro percutor</strong> como el
-          <strong>atornillador</strong> permiten obtener amplias opciones de
-          taladro dependiendo de los tipos de brocas que utilices.
+          La <strong>carretilla</strong> es un vehículo con una sola rueda o
+          dos, que se utiliza para transportar pequeños montos de carga y sólo
+          se necesita el trabajo de una persona para ponerla en funcionamiento.
+          Las <strong>carretillas</strong>
+          con dos ruedas son mucho más útiles para transportar objetos muy
+          pesados que son difíciles de controlar con sólo una rueda. La
+          <strong>carretilla</strong> es importante para las empresas que
+          transportan muchas cargas pequeñas de un lugar a otro, o bien para el
+          uso hogareño.
         </Typography>
       </div>
       <Divider light />
@@ -198,7 +177,7 @@ export default function TaladroAtornilladorScreen(props) {
 
       <Divider light />
       <div>
-        <h2>Los 5 taladros atornilladores más vendidos</h2>
+        <h2>Las 5 carretillas más vendidas</h2>
         <Grid container spacing={3}>
           {products.map((product) => (
             <Grid container item md={4} key={product.name}>
@@ -216,19 +195,15 @@ export default function TaladroAtornilladorScreen(props) {
             <Card className={cx(styles.root)}>
               <CardMedia
                 className={styles.media}
-                image={
-                  '/images/taladrosAtornillador/81Kr8gxqcsL._AC_SL1500_.jpg'
-                }
+                image={'/images/carretillas/71sUmgjClRL._AC_SL1500_.jpg'}
               />
               <CardContent>
                 <TextInfoContent
                   classes={contentStyles}
-                  overline={'Excelente producto de muy buena calidad'}
-                  heading={
-                    'Destornillador Eléctrico 6N.m, HYCHIKA Atornillador Eléctrico Inalámbrico 3.6v Batería 2000mAh (Máximo Par 6 N.m) LED Luz, Mandril Magnético, Cargador con Cable 3.5mm, 20 Accesorios'
-                  }
+                  overline={' Facil manejo y resistente'}
+                  heading={'ATHLON TOOLS Carretilla plegable de aluminio'}
                   body={
-                    'Destaco sobre todo la potencia para atornillar/desatornillar que tiene el aparato, cargándose solo a través de USB (yo lo he hecho con un adaptador a corriente). También destacar el numero de diferentes cabezales que tiene, y la adaptación para poder atornillar en 35/40º o recto. Por ultimo también merece mención el tiempo que permanece funcionando con una sola carga de USB, y las dos bombillas LED que posee.'
+                    'Lo utilizo para el trabajo y cumple perfectamente mis necesidades de carga de maletin de herramientas y mochila de trabajo. Excelente producto.'
                   }
                 />
                 <Button className={buttonStyles}>Read more</Button>
@@ -239,19 +214,15 @@ export default function TaladroAtornilladorScreen(props) {
             <Card className={cx(styles.root)}>
               <CardMedia
                 className={styles.media}
-                image={
-                  '/images/taladrosAtornillador/81NUfvNm4wL._AC_SL1500_.jpg'
-                }
+                image={'/images/carretillas/51NB8SH6kuL._AC_SL1000_.jpg'}
               />
               <CardContent>
                 <TextInfoContent
                   classes={contentStyles}
-                  overline={' Útil para el día a día'}
-                  heading={
-                    'Taladro Atornillador 12V con 2 Baterías, HYCHIKA Destornillador Eléctrico, 30N.m Par Máx, 1.5 Ah Batería, 1 Hora de Carga Rápida, 6PCS Puntas y HSS Brocas, 5PCS Llaves de vaso, 4PCS Brocas de Madera'
-                  }
+                  overline={'Lo he puesto a prueba y la ha superado'}
+                  heading={'Stanley SXWTD-HT523 - Carretilla de mano de acero'}
                   body={
-                    'Ha sido una de las mejores compras que he hecho. Los tornillos se ponen en un segundo y casi sin esfuerzo. La batería de momento me ha durado bastante, además voy utilizando las dos que vienen para que no se me degrade ninguna de ellas por no utlizarla. Además también he podido utilizarlo para hacer taladros en una mesa de madera. No lo recomendaría para hacer taladros en la pared ya que no creo que tenga la potencia suficiente. Para uso en madera y materiales más blandos está bien.'
+                    'Pues bien, he transportado hasta 90kg de una vez y varias veces y se ha comportado de 10.'
                   }
                 />
                 <Button className={buttonStyles}>Read more</Button>
@@ -262,19 +233,15 @@ export default function TaladroAtornilladorScreen(props) {
             <Card className={cx(styles.root)}>
               <CardMedia
                 className={styles.media}
-                image={
-                  '/images/taladrosAtornillador/71iF7VUX5aL._AC_SL1500_.jpg'
-                }
+                image={'/images/carretillas/618lpV9TV8L._SL1001_.jpg'}
               />
               <CardContent>
                 <TextInfoContent
                   classes={contentStyles}
-                  overline={' Buen atornillador.'}
-                  heading={
-                    'Taladro Atornillador 2 Baterías, GOXAWEE 100Pcs Kit Taladro Bateria/Destornillador Eléctrico (2 Baterías de Litio 1500mAh, 30N.m Par Máx, 2 Velocidades, 10mm Portabrocas Automático)'
-                  }
+                  overline={' Impresionado por el momento'}
+                  heading={'Hivexagon Carrito de Equipaje Plegable'}
                   body={
-                    'Atornillador muy completo, tienes todo lo que puedes a llegar necesitar en casa, ya que personalmente creo que es para eso, bricolaje amateur, yo lo he usado y comprado para el montaje de una habitación y me lo ha hecho fácil.'
+                    'Con mas de 3 semanas de uso, aveces INTENSIVO, estoy muy impresionado por la resistencia de este carrito.'
                   }
                 />
                 <Button className={buttonStyles}>Read more</Button>
@@ -285,19 +252,17 @@ export default function TaladroAtornilladorScreen(props) {
             <Card className={cx(styles.root)}>
               <CardMedia
                 className={styles.media}
-                image={
-                  '/images/taladrosAtornillador/61cfqqH5u7S._AC_SL1000_.jpg'
-                }
+                image={'/images/carretillas/71aIYrucbPL._AC_SL1500_.jpg'}
               />
               <CardContent>
                 <TextInfoContent
                   classes={contentStyles}
-                  overline={' Buen kit completo'}
+                  overline={' Da el apaño.'}
                   heading={
-                    'Taladro Atornillador 21V, TEENO 41Pcs Kit Destornillador Eléctrico (2 Baterías de Litio 1500mAh, 40N.m Par Máx, 2 Velocidades, 10mm Portabrocas Automatico)'
+                    'Meister 8985730 - Carretilla, 45 kg, mini, plegable'
                   }
                   body={
-                    'No soy muy dado a estas cosas, pero lo compré a un buen precio y tenía todo lo que necesitaba y más. Funcionó perfectamente y va con dos baterías y pude trabajar tranquilamente con solo una. Al menos, para tenerlo en casa por si acaso hace falta, es perfecto. Puede que para alguien que le dé un uso fuerte no sea tan buena.'
+                    'Para transportar algunas cajas de herramientas viene muy bien, no es para llevar gran peso pero si para liberarte de cargar con las herramientas de mano.'
                   }
                 />
                 <Button className={buttonStyles}>Read more</Button>
@@ -308,19 +273,17 @@ export default function TaladroAtornilladorScreen(props) {
             <Card className={cx(styles.root)}>
               <CardMedia
                 className={styles.media}
-                image={
-                  '/images/taladrosAtornillador/71ITLPRvwyL._AC_SL1500_.jpg'
-                }
+                image={'/images/carretillas/616KnVzTapL._AC_SL1500_.jpg'}
               />
               <CardContent>
                 <TextInfoContent
                   classes={contentStyles}
-                  overline={' Un todo-terreno para el hogar'}
+                  overline={'Manejable'}
                   heading={
-                    'BLACK+DECKER BCK24D2S-QW - Taladro Percutor 18V (21.000 ipm) y amoladora 125 mm 18V, con 2 baterías litio 2Ah y bolsa de transporte'
+                    'DURHAND Carretilla Plegable para Escalera con Ruedas'
                   }
                   body={
-                    'Puede parecer una tontería dudar si se necesita, pero es realmente muy util para conseguir atornillar o desatornillar tornillos sin apenas esfuerzo. Es "salud" para tu muñeca, y lo hace todo más fácil y rápido. Por poner una comparativa, es como si montas claras a mano o lo haces con un accesorio de tu batidora. Se puede hacer de ambas formas, pero hay diferencia en la comodidad.'
+                    'Resistente, practica , las ruedas te ayudan a bajar y subir escaleras . Yo la uso para trabajar y es perfecta .'
                   }
                 />
                 <Button className={buttonStyles}>Read more</Button>
@@ -334,7 +297,7 @@ export default function TaladroAtornilladorScreen(props) {
 }
 
 export async function getServerSideProps() {
-  const category = 'Taladros Atornilladores';
+  const category = 'Carretillas';
   const categoryFilter = { category };
   await db.connect();
   const products = await Product.find({ ...categoryFilter }).lean();

@@ -27,48 +27,53 @@ function createData(name, _1, _2, _3, _4, _5) {
 const rows = [
   createData(
     'Calificación de cliente',
-    <Rating value={4.3} precision={0.5} readOnly></Rating>,
+    <Rating value={4.4} precision={0.5} readOnly></Rating>,
+    <Rating value={4.4} precision={0.5} readOnly></Rating>,
     <Rating value={4.4} precision={0.5} readOnly></Rating>,
     <Rating value={4.3} precision={0.5} readOnly></Rating>,
-    <Rating value={4.1} precision={0.5} readOnly></Rating>,
-    <Rating value={4.4} precision={0.5} readOnly></Rating>
+    <Rating value={4.2} precision={0.5} readOnly></Rating>
   ),
-  createData('Precio', '24,99 €', '54,99 €', '45,98 €', '61,99 €', '24,49 €'),
+  createData('Precio', '130,50 €', '85,37 €', '69,00 €', '67,44 €', '70,00 €'),
   createData(
-    'Dimensiones Artículo	',
-    '18.5 x 14.5 x 8 cm',
-    '25.8 x 23 x 9 cm',
-    '28 x 25 x 8  cm',
-    '30 x 10 x 25 cm',
-    '20.6 x 18.8 x 6.5 cm'
+    'Dimensiones Artículo',
+    '38 x 38 x 35 cm',
+    '30 x 15 x 10 cm',
+    '15 x 10 x 10 cm',
+    '32.5 x 16 x 3.8 cm',
+    '30.5 x 17.2 x 21 cm'
   ),
   createData(
     'Peso Artículo',
-    '0.75 kg',
-    '2.2 kg',
-    '‎2.32 kg',
-    '‎4.11 kg',
-    '0.68 kg'
+    '9.00 kg',
+    '0.4 kg',
+    '‎1.2 kg',
+    '0.88 Libras',
+    '998 Gramos'
   ),
   createData(
     'Voltaje',
-    '3.6 Voltios',
+    '230 Voltios',
+    '4 Voltios',
     '12 Voltios',
-    '12 Voltios',
-    '20 Voltios',
-    '3.6 Voltios'
+    '‎230 Voltios',
+    '230 Voltios'
   ),
-  createData('Velocidad', '180 RPM', '1500 RPM', '‎1350 RPM', '-', '-'),
+  createData(
+    'Máxima presión',
+    '‎8 Bar',
+    '10,3 Bar',
+    '‎7 Bar.',
+    '‎8 Bar',
+    '11 Bar'
+  ),
   createData(
     'Fuente de alimentación',
-    '‎‎Baterías',
-    '‎Baterías',
-    'Baterías',
-    'Eléctrica_sin_cable',
-    'Baterías'
+    '‎‎‎Neumática',
+    '‎Funciona con batería',
+    'Cable eléctrico',
+    '-',
+    'Cable eléctrico'
   ),
-  createData('Incluye baterías', 'Sí', 'Sí', 'Sí', '‎Sí', '‎Sí'),
-  createData('Necesita baterías', 'No', 'Sí', 'No', '‎Sí', '‎No'),
 ];
 
 const useStyles = makeStyles(({ breakpoints, spacing }) => ({
@@ -128,7 +133,7 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
   },
 }));
 
-export default function TaladroAtornilladorScreen(props) {
+export default function CompresorAireScreen(props) {
   const { products } = props;
   const styles = useStyles();
   const { button: buttonStyles, ...contentStyles } =
@@ -137,22 +142,21 @@ export default function TaladroAtornilladorScreen(props) {
     <Layout>
       <header>
         <div>
-          <h1>Taladro Atornillador</h1>
+          <h1>Compresores de aire</h1>
         </div>
       </header>
       <div>
         <Typography variant="body1" gutterBottom>
-          Junto con los <strong>taladros percutores</strong> son, sin duda, los
-          más utilizados. La principal función de estos tipos de{' '}
-          <strong>taladros</strong> es la de{' '}
-          <strong>atornillar y desatornillar</strong>. La agilidad del trabajo
-          se ve positivamente influenciada por estos <strong>taladros</strong>,
-          ya que permite
-          <strong>desatornillar y atornillar</strong> cualquier tipo de tornillo
-          y, y por tanto, trabajar mucho más rápidamente. Tanto el{' '}
-          <strong>taladro percutor</strong> como el
-          <strong>atornillador</strong> permiten obtener amplias opciones de
-          taladro dependiendo de los tipos de brocas que utilices.
+          El <strong>compresor de aire</strong> es una máquina diseñada para
+          aumentar la presión del aire por medio de la compresión. Los usos de
+          los <strong>compresores de aire</strong> son muy diversos, los más
+          comunes son los usos que se llevan a cabo de manera intermitente como
+          por ejemplo{' '}
+          <strong>
+            el inflado de neumáticos, el uso de herramientas neumáticas como por
+            ejemplo una pistola neumática o bien en pistolas de pintura
+          </strong>
+          .
         </Typography>
       </div>
       <Divider light />
@@ -198,7 +202,7 @@ export default function TaladroAtornilladorScreen(props) {
 
       <Divider light />
       <div>
-        <h2>Los 5 taladros atornilladores más vendidos</h2>
+        <h2>Los 5 compresores de aire más vendidos</h2>
         <Grid container spacing={3}>
           {products.map((product) => (
             <Grid container item md={4} key={product.name}>
@@ -216,19 +220,15 @@ export default function TaladroAtornilladorScreen(props) {
             <Card className={cx(styles.root)}>
               <CardMedia
                 className={styles.media}
-                image={
-                  '/images/taladrosAtornillador/81Kr8gxqcsL._AC_SL1500_.jpg'
-                }
+                image={'/images/compresoresAire/71KbeNPd9rS._AC_SL1500_.jpg'}
               />
               <CardContent>
                 <TextInfoContent
                   classes={contentStyles}
-                  overline={'Excelente producto de muy buena calidad'}
-                  heading={
-                    'Destornillador Eléctrico 6N.m, HYCHIKA Atornillador Eléctrico Inalámbrico 3.6v Batería 2000mAh (Máximo Par 6 N.m) LED Luz, Mandril Magnético, Cargador con Cable 3.5mm, 20 Accesorios'
-                  }
+                  overline={' Maquinón portable'}
+                  heading={'Stanley DN200/8/6 - Compresor de aire'}
                   body={
-                    'Destaco sobre todo la potencia para atornillar/desatornillar que tiene el aparato, cargándose solo a través de USB (yo lo he hecho con un adaptador a corriente). También destacar el numero de diferentes cabezales que tiene, y la adaptación para poder atornillar en 35/40º o recto. Por ultimo también merece mención el tiempo que permanece funcionando con una sola carga de USB, y las dos bombillas LED que posee.'
+                    'ya no me da pereza hacer bricolaje, aguanta muy bien y trabaja muy bien hasta 8 bares, no necesita mantenimiento y tiene potencia más que suficiente para mi nivel de bricolaje (clavar, grapar, etc).'
                   }
                 />
                 <Button className={buttonStyles}>Read more</Button>
@@ -239,19 +239,19 @@ export default function TaladroAtornilladorScreen(props) {
             <Card className={cx(styles.root)}>
               <CardMedia
                 className={styles.media}
-                image={
-                  '/images/taladrosAtornillador/81NUfvNm4wL._AC_SL1500_.jpg'
-                }
+                image={'/images/compresoresAire/61TJILXpA5L._AC_SL1000_.jpg'}
               />
               <CardContent>
                 <TextInfoContent
                   classes={contentStyles}
-                  overline={' Útil para el día a día'}
+                  overline={
+                    'Su fabricante siempre ha sido una buena referencia.'
+                  }
                   heading={
-                    'Taladro Atornillador 12V con 2 Baterías, HYCHIKA Destornillador Eléctrico, 30N.m Par Máx, 1.5 Ah Batería, 1 Hora de Carga Rápida, 6PCS Puntas y HSS Brocas, 5PCS Llaves de vaso, 4PCS Brocas de Madera'
+                    'Bosch compresor de aire a batería EasyPump (batería de 3,0 Ah, 3,6 voltios, función de parada automática, 150 psi, 10,3 bar, LED, recargable mediante cable USB-C, en caja)'
                   }
                   body={
-                    'Ha sido una de las mejores compras que he hecho. Los tornillos se ponen en un segundo y casi sin esfuerzo. La batería de momento me ha durado bastante, además voy utilizando las dos que vienen para que no se me degrade ninguna de ellas por no utlizarla. Además también he podido utilizarlo para hacer taladros en una mesa de madera. No lo recomendaría para hacer taladros en la pared ya que no creo que tenga la potencia suficiente. Para uso en madera y materiales más blandos está bien.'
+                    'El conjunto cumple su función , para reajustar la presión de las ruedas del coche, incluida la de repuesto.'
                   }
                 />
                 <Button className={buttonStyles}>Read more</Button>
@@ -262,19 +262,17 @@ export default function TaladroAtornilladorScreen(props) {
             <Card className={cx(styles.root)}>
               <CardMedia
                 className={styles.media}
-                image={
-                  '/images/taladrosAtornillador/71iF7VUX5aL._AC_SL1500_.jpg'
-                }
+                image={'/images/compresoresAire/51f1fkUfI+L._AC_SL1009_.jpg'}
               />
               <CardContent>
                 <TextInfoContent
                   classes={contentStyles}
-                  overline={' Buen atornillador.'}
+                  overline={'Increíblemente preciso'}
                   heading={
-                    'Taladro Atornillador 2 Baterías, GOXAWEE 100Pcs Kit Taladro Bateria/Destornillador Eléctrico (2 Baterías de Litio 1500mAh, 30N.m Par Máx, 2 Velocidades, 10mm Portabrocas Automático)'
+                    'MICHELIN 9519 Compresor de aire portatil programable, 12 V'
                   }
                   body={
-                    'Atornillador muy completo, tienes todo lo que puedes a llegar necesitar en casa, ya que personalmente creo que es para eso, bricolaje amateur, yo lo he usado y comprado para el montaje de una habitación y me lo ha hecho fácil.'
+                    'El aparato es increíblemente preciso y fácil de usar. Es robusto y denota calidad por los cuatro costados.'
                   }
                 />
                 <Button className={buttonStyles}>Read more</Button>
@@ -285,19 +283,17 @@ export default function TaladroAtornilladorScreen(props) {
             <Card className={cx(styles.root)}>
               <CardMedia
                 className={styles.media}
-                image={
-                  '/images/taladrosAtornillador/61cfqqH5u7S._AC_SL1000_.jpg'
-                }
+                image={'/images/compresoresAire/712uua9pfmL._AC_SL1500_.jpg'}
               />
               <CardContent>
                 <TextInfoContent
                   classes={contentStyles}
-                  overline={' Buen kit completo'}
+                  overline={' Homologado'}
                   heading={
-                    'Taladro Atornillador 21V, TEENO 41Pcs Kit Destornillador Eléctrico (2 Baterías de Litio 1500mAh, 40N.m Par Máx, 2 Velocidades, 10mm Portabrocas Automatico)'
+                    'MICHELIN - Inflador con medidor de presión de neumáticos - Presión máxima: 10 bar - Homologado, negro, norme'
                   }
                   body={
-                    'No soy muy dado a estas cosas, pero lo compré a un buen precio y tenía todo lo que necesitaba y más. Funcionó perfectamente y va con dos baterías y pude trabajar tranquilamente con solo una. Al menos, para tenerlo en casa por si acaso hace falta, es perfecto. Puede que para alguien que le dé un uso fuerte no sea tan buena.'
+                    'Buen producto de la empresa Michelin como todos los que produce.'
                   }
                 />
                 <Button className={buttonStyles}>Read more</Button>
@@ -308,19 +304,15 @@ export default function TaladroAtornilladorScreen(props) {
             <Card className={cx(styles.root)}>
               <CardMedia
                 className={styles.media}
-                image={
-                  '/images/taladrosAtornillador/71ITLPRvwyL._AC_SL1500_.jpg'
-                }
+                image={'/images/compresoresAire/61Tc9ul2hvL._AC_SL1000_.jpg'}
               />
               <CardContent>
                 <TextInfoContent
                   classes={contentStyles}
-                  overline={' Un todo-terreno para el hogar'}
-                  heading={
-                    'BLACK+DECKER BCK24D2S-QW - Taladro Percutor 18V (21.000 ipm) y amoladora 125 mm 18V, con 2 baterías litio 2Ah y bolsa de transporte'
-                  }
+                  overline={'  Buen producto'}
+                  heading={'Black+Decker ASI300-QS - Compresor de aire'}
                   body={
-                    'Puede parecer una tontería dudar si se necesita, pero es realmente muy util para conseguir atornillar o desatornillar tornillos sin apenas esfuerzo. Es "salud" para tu muñeca, y lo hace todo más fácil y rápido. Por poner una comparativa, es como si montas claras a mano o lo haces con un accesorio de tu batidora. Se puede hacer de ambas formas, pero hay diferencia en la comodidad.'
+                    'Opino despues de 3 años de uso,debo decir que va como el primer dia ,mi uso es para hinchar colchonetas,balones y presion del coche,ya que siempre lo llevo en el coche,cumple ?? si!!'
                   }
                 />
                 <Button className={buttonStyles}>Read more</Button>
@@ -334,7 +326,7 @@ export default function TaladroAtornilladorScreen(props) {
 }
 
 export async function getServerSideProps() {
-  const category = 'Taladros Atornilladores';
+  const category = 'Compresores de aire';
   const categoryFilter = { category };
   await db.connect();
   const products = await Product.find({ ...categoryFilter }).lean();

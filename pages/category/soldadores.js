@@ -28,47 +28,21 @@ const rows = [
   createData(
     'Calificación de cliente',
     <Rating value={4.3} precision={0.5} readOnly></Rating>,
-    <Rating value={4.4} precision={0.5} readOnly></Rating>,
-    <Rating value={4.3} precision={0.5} readOnly></Rating>,
+    <Rating value={3.4} precision={0.5} readOnly></Rating>,
+    <Rating value={4.5} precision={0.5} readOnly></Rating>,
     <Rating value={4.1} precision={0.5} readOnly></Rating>,
-    <Rating value={4.4} precision={0.5} readOnly></Rating>
+    <Rating value={4.5} precision={0.5} readOnly></Rating>
   ),
-  createData('Precio', '24,99 €', '54,99 €', '45,98 €', '61,99 €', '24,49 €'),
+  createData('Precio', '13,99 €', '21,36 €', '44,00 €', '36,99 €', '160,00 €'),
   createData(
     'Dimensiones Artículo	',
-    '18.5 x 14.5 x 8 cm',
-    '25.8 x 23 x 9 cm',
-    '28 x 25 x 8  cm',
-    '30 x 10 x 25 cm',
-    '20.6 x 18.8 x 6.5 cm'
+    '‎26.4 x 6.8 x 6.6 cm',
+    '26 x 12 x 15 cm',
+    '19 x 2.5 x 2.5 cm',
+    '‎29.3 x 23.8 x 7.7 cm',
+    '‎25.4 x 10 x 17 cm'
   ),
-  createData(
-    'Peso Artículo',
-    '0.75 kg',
-    '2.2 kg',
-    '‎2.32 kg',
-    '‎4.11 kg',
-    '0.68 kg'
-  ),
-  createData(
-    'Voltaje',
-    '3.6 Voltios',
-    '12 Voltios',
-    '12 Voltios',
-    '20 Voltios',
-    '3.6 Voltios'
-  ),
-  createData('Velocidad', '180 RPM', '1500 RPM', '‎1350 RPM', '-', '-'),
-  createData(
-    'Fuente de alimentación',
-    '‎‎Baterías',
-    '‎Baterías',
-    'Baterías',
-    'Eléctrica_sin_cable',
-    'Baterías'
-  ),
-  createData('Incluye baterías', 'Sí', 'Sí', 'Sí', '‎Sí', '‎Sí'),
-  createData('Necesita baterías', 'No', 'Sí', 'No', '‎Sí', '‎No'),
+  createData('Peso Artículo', '320 g', '400 g', '‎135 g', '1.31 kg', '2.4 kg'),
 ];
 
 const useStyles = makeStyles(({ breakpoints, spacing }) => ({
@@ -128,7 +102,7 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
   },
 }));
 
-export default function TaladroAtornilladorScreen(props) {
+export default function SoldadorScreen(props) {
   const { products } = props;
   const styles = useStyles();
   const { button: buttonStyles, ...contentStyles } =
@@ -137,22 +111,19 @@ export default function TaladroAtornilladorScreen(props) {
     <Layout>
       <header>
         <div>
-          <h1>Taladro Atornillador</h1>
+          <h1>Soldadores</h1>
         </div>
       </header>
       <div>
         <Typography variant="body1" gutterBottom>
-          Junto con los <strong>taladros percutores</strong> son, sin duda, los
-          más utilizados. La principal función de estos tipos de{' '}
-          <strong>taladros</strong> es la de{' '}
-          <strong>atornillar y desatornillar</strong>. La agilidad del trabajo
-          se ve positivamente influenciada por estos <strong>taladros</strong>,
-          ya que permite
-          <strong>desatornillar y atornillar</strong> cualquier tipo de tornillo
-          y, y por tanto, trabajar mucho más rápidamente. Tanto el{' '}
-          <strong>taladro percutor</strong> como el
-          <strong>atornillador</strong> permiten obtener amplias opciones de
-          taladro dependiendo de los tipos de brocas que utilices.
+          La <strong>soldadura</strong> es un proceso de fijación en el cual se
+          realiza la unión de dos o más piezas de un material (generalmente
+          metales o termoplásticos), usualmente logrado a través de la
+          coalescencia (fusión), en la cual las piezas son soldadas fundiendo,
+          se puede agregar un material de aporte (metal o plástico), que, al
+          fundirse, forma un charco de material fundido entre las piezas a
+          soldar (el baño de soldadura) y, al enfriarse, se convierte en una
+          unión fija a la que se le denomina cordón.
         </Typography>
       </div>
       <Divider light />
@@ -198,7 +169,7 @@ export default function TaladroAtornilladorScreen(props) {
 
       <Divider light />
       <div>
-        <h2>Los 5 taladros atornilladores más vendidos</h2>
+        <h2>Los 5 soldadores más vendidos</h2>
         <Grid container spacing={3}>
           {products.map((product) => (
             <Grid container item md={4} key={product.name}>
@@ -216,19 +187,17 @@ export default function TaladroAtornilladorScreen(props) {
             <Card className={cx(styles.root)}>
               <CardMedia
                 className={styles.media}
-                image={
-                  '/images/taladrosAtornillador/81Kr8gxqcsL._AC_SL1500_.jpg'
-                }
+                image={'/images/soldadores/61sONbaNn2L._AC_SL1000_.jpg'}
               />
               <CardContent>
                 <TextInfoContent
                   classes={contentStyles}
-                  overline={'Excelente producto de muy buena calidad'}
+                  overline={' Tº ajustable y buen precio'}
                   heading={
-                    'Destornillador Eléctrico 6N.m, HYCHIKA Atornillador Eléctrico Inalámbrico 3.6v Batería 2000mAh (Máximo Par 6 N.m) LED Luz, Mandril Magnético, Cargador con Cable 3.5mm, 20 Accesorios'
+                    'E·Durable Soldadores de Estaño Electronica, 60W 220V Kit del Soldador 5pcs Puntas Diferentes,Alambre de Soldadura Soporte,Cortador,Pinzas,destornillador'
                   }
                   body={
-                    'Destaco sobre todo la potencia para atornillar/desatornillar que tiene el aparato, cargándose solo a través de USB (yo lo he hecho con un adaptador a corriente). También destacar el numero de diferentes cabezales que tiene, y la adaptación para poder atornillar en 35/40º o recto. Por ultimo también merece mención el tiempo que permanece funcionando con una sola carga de USB, y las dos bombillas LED que posee.'
+                    '... la compra es totalmente recomendable, relación calidad precio muy buena, además tiene regulación de temperatura.'
                   }
                 />
                 <Button className={buttonStyles}>Read more</Button>
@@ -239,19 +208,15 @@ export default function TaladroAtornilladorScreen(props) {
             <Card className={cx(styles.root)}>
               <CardMedia
                 className={styles.media}
-                image={
-                  '/images/taladrosAtornillador/81NUfvNm4wL._AC_SL1500_.jpg'
-                }
+                image={'/images/soldadores/71erzy6QM5L._SL1500_.jpg'}
               />
               <CardContent>
                 <TextInfoContent
                   classes={contentStyles}
-                  overline={' Útil para el día a día'}
-                  heading={
-                    'Taladro Atornillador 12V con 2 Baterías, HYCHIKA Destornillador Eléctrico, 30N.m Par Máx, 1.5 Ah Batería, 1 Hora de Carga Rápida, 6PCS Puntas y HSS Brocas, 5PCS Llaves de vaso, 4PCS Brocas de Madera'
-                  }
+                  overline={' Su calidad y precio'}
+                  heading={'Campingaz 2000026173 - Soldador'}
                   body={
-                    'Ha sido una de las mejores compras que he hecho. Los tornillos se ponen en un segundo y casi sin esfuerzo. La batería de momento me ha durado bastante, además voy utilizando las dos que vienen para que no se me degrade ninguna de ellas por no utlizarla. Además también he podido utilizarlo para hacer taladros en una mesa de madera. No lo recomendaría para hacer taladros en la pared ya que no creo que tenga la potencia suficiente. Para uso en madera y materiales más blandos está bien.'
+                    'Muy buena antorcha, practica y manuable su peso es muy práctico y se pueden hacer muchos trabajos.'
                   }
                 />
                 <Button className={buttonStyles}>Read more</Button>
@@ -262,19 +227,17 @@ export default function TaladroAtornilladorScreen(props) {
             <Card className={cx(styles.root)}>
               <CardMedia
                 className={styles.media}
-                image={
-                  '/images/taladrosAtornillador/71iF7VUX5aL._AC_SL1500_.jpg'
-                }
+                image={'/images/soldadores/61lpNdFHpdL._SL1500_.jpg'}
               />
               <CardContent>
                 <TextInfoContent
                   classes={contentStyles}
-                  overline={' Buen atornillador.'}
+                  overline={' Una maravilla'}
                   heading={
-                    'Taladro Atornillador 2 Baterías, GOXAWEE 100Pcs Kit Taladro Bateria/Destornillador Eléctrico (2 Baterías de Litio 1500mAh, 30N.m Par Máx, 2 Velocidades, 10mm Portabrocas Automático)'
+                    'Dremel Versatip 2000 - Pirograbador a gas butano con 6 puntas para soldadura, pirografo, fusión, corte en caliente, compresión (duración de encendido máximo 90 min)'
                   }
                   body={
-                    'Atornillador muy completo, tienes todo lo que puedes a llegar necesitar en casa, ya que personalmente creo que es para eso, bricolaje amateur, yo lo he usado y comprado para el montaje de una habitación y me lo ha hecho fácil.'
+                    'De todos los soldadores de gas que he tenido, este, con diferencia, es el mejor.'
                   }
                 />
                 <Button className={buttonStyles}>Read more</Button>
@@ -285,19 +248,17 @@ export default function TaladroAtornilladorScreen(props) {
             <Card className={cx(styles.root)}>
               <CardMedia
                 className={styles.media}
-                image={
-                  '/images/taladrosAtornillador/61cfqqH5u7S._AC_SL1000_.jpg'
-                }
+                image={'/images/soldadores/91srqH+z+2L._AC_SL1500_.jpg'}
               />
               <CardContent>
                 <TextInfoContent
                   classes={contentStyles}
-                  overline={' Buen kit completo'}
+                  overline={' Calidad precio utilidad'}
                   heading={
-                    'Taladro Atornillador 21V, TEENO 41Pcs Kit Destornillador Eléctrico (2 Baterías de Litio 1500mAh, 40N.m Par Máx, 2 Velocidades, 10mm Portabrocas Automatico)'
+                    'Bostar Máquinas de Soldadura de Parachoques Automáticos 220V'
                   }
                   body={
-                    'No soy muy dado a estas cosas, pero lo compré a un buen precio y tenía todo lo que necesitaba y más. Funcionó perfectamente y va con dos baterías y pude trabajar tranquilamente con solo una. Al menos, para tenerlo en casa por si acaso hace falta, es perfecto. Puede que para alguien que le dé un uso fuerte no sea tan buena.'
+                    'Genial muy fácil de usar la verdad q un gran invento para hacer bricos y arreglar plásticos que veías imposibles con pegamentos, una máquina que me sorprendió muy completa y de fácil manipulación.'
                   }
                 />
                 <Button className={buttonStyles}>Read more</Button>
@@ -308,19 +269,17 @@ export default function TaladroAtornilladorScreen(props) {
             <Card className={cx(styles.root)}>
               <CardMedia
                 className={styles.media}
-                image={
-                  '/images/taladrosAtornillador/71ITLPRvwyL._AC_SL1500_.jpg'
-                }
+                image={'/images/soldadores/81zYf8eKdZS._AC_SL1500_.jpg'}
               />
               <CardContent>
                 <TextInfoContent
                   classes={contentStyles}
-                  overline={' Un todo-terreno para el hogar'}
+                  overline={'Perfecta'}
                   heading={
-                    'BLACK+DECKER BCK24D2S-QW - Taladro Percutor 18V (21.000 ipm) y amoladora 125 mm 18V, con 2 baterías litio 2Ah y bolsa de transporte'
+                    'STAYER 1.2381 Equipo de Soldadura Inverter, Super Plus 160 GEK'
                   }
                   body={
-                    'Puede parecer una tontería dudar si se necesita, pero es realmente muy util para conseguir atornillar o desatornillar tornillos sin apenas esfuerzo. Es "salud" para tu muñeca, y lo hace todo más fácil y rápido. Por poner una comparativa, es como si montas claras a mano o lo haces con un accesorio de tu batidora. Se puede hacer de ambas formas, pero hay diferencia en la comodidad.'
+                    'Es la máquina ideal para trabajos en casa pero si necesitas algo potente también sirve muy satisfecho'
                   }
                 />
                 <Button className={buttonStyles}>Read more</Button>
@@ -334,7 +293,7 @@ export default function TaladroAtornilladorScreen(props) {
 }
 
 export async function getServerSideProps() {
-  const category = 'Taladros Atornilladores';
+  const category = 'Soldadores';
   const categoryFilter = { category };
   await db.connect();
   const products = await Product.find({ ...categoryFilter }).lean();
