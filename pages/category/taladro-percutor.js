@@ -1,5 +1,5 @@
 import Layout from '../../components/Layout';
-import { Divider, Grid, Typography } from '@material-ui/core';
+import { Divider, Grid, Typography, Link } from '@material-ui/core';
 import ProductItem from '../../components/ProductItem';
 import db from '../../utils/db';
 import Product from '../../models/Product';
@@ -20,6 +20,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import TextInfoContent from '@mui-treasury/components/content/textInfo';
 import { useBlogTextInfoContentStyles } from '@mui-treasury/styles/textInfoContent/blog';
+import NextLink from 'next/link';
 
 function createData(name, _1, _2, _3, _4, _5) {
   return { name, _1, _2, _3, _4, _5 };
@@ -155,6 +156,19 @@ export default function TaladroPercutorScreen(props) {
           función percusión siempre que no la necesites.
         </Typography>
       </div>
+
+      <Divider light />
+      <div>
+        <h2>Los 5 taladros percutores más vendidos</h2>
+        <Grid container spacing={3}>
+          {products.map((product) => (
+            <Grid container item md={4} key={product.name}>
+              <ProductItem product={product} />
+            </Grid>
+          ))}
+        </Grid>
+      </div>
+
       <Divider light />
       <div>
         <h2>Comparación</h2>
@@ -173,7 +187,11 @@ export default function TaladroPercutorScreen(props) {
                         width="200px"
                       ></Image>
                     </div>
-                    <div>{product.name}</div>
+                    <div>
+                      <NextLink href={product.link} passHref>
+                        <Link>{product.name}</Link>
+                      </NextLink>
+                    </div>
                   </TableCell>
                 ))}
               </TableRow>
@@ -198,18 +216,6 @@ export default function TaladroPercutorScreen(props) {
 
       <Divider light />
       <div>
-        <h2>Los 5 taladros percutores más vendidos</h2>
-        <Grid container spacing={3}>
-          {products.map((product) => (
-            <Grid container item md={4} key={product.name}>
-              <ProductItem product={product} />
-            </Grid>
-          ))}
-        </Grid>
-      </div>
-
-      <Divider light />
-      <div>
         <h2>Opiniones de Compradores</h2>
         <Grid container spacing={3}>
           <Grid container item md={12}>
@@ -229,7 +235,12 @@ export default function TaladroPercutorScreen(props) {
                     'Opinión después de muchos meses de uso, no lo cambio por nada, si le doy 4 estrellas es porque las brocas que incluye son bastante normales y como toques una viga, no la pasas ni queriendo, hay que comprar brocas especiales para eso, por lo demás, es potente, no pesa, muy manejable, se calienta poco y viene con maletín para guardar ¿Qué mas puedo pedir?'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/BEH200-QS-Taladro-percutor-incluye-empu%C3%B1adura/dp/B07MJHBCKX?_encoding=UTF8&refRID=D4KSTNHTV7FYJY985F44&th=1&linkCode=ll1&tag=sarria93-21&linkId=5ab6ae49febad0a88fd6613ea80c6340&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -250,7 +261,12 @@ export default function TaladroPercutorScreen(props) {
                     'Tras el uso de diferentes marcas y modelo, calidad precio lo mejor del mercado para usuarios no profesionales. De momento la he probado en todo tipo de materiales y funciona a la perfección. El sistema de apriete manual podría mejorar un poco , ya que alguna vez he tenido que volver a realizar el ajuste y apriete.'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/Bosch-EasyImpact-empu%C3%B1adura-adicional-profundidad/dp/B06XR17QSM?_encoding=UTF8&refRID=D4KSTNHTV7FYJY985F44&th=1&linkCode=ll1&tag=sarria93-21&linkId=a2990c4a0c49adf5a1a6d0bff4380ca5&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -271,7 +287,12 @@ export default function TaladroPercutorScreen(props) {
                     'Viene con su caja de plástico duro, muy bien protegido. A falta de probarlo , lo he conectado a la red y suena a potencia y bastante bien. Eso sí no esperes una herramienta ligera, pesa bastante , pero se ve robusta y de muy buena calidad.'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/Martillo-Perforador-Funciones-Seguridad-Utilizado/dp/B097YFX623?_encoding=UTF8&psc=1&refRID=D4KSTNHTV7FYJY985F44&linkCode=ll1&tag=sarria93-21&linkId=879ab7b0c5fb85a7472ea23b81736fd7&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -292,7 +313,12 @@ export default function TaladroPercutorScreen(props) {
                     'Le regalé este taladro a mi padre, y ha quedado muy contento, el precio vale la pena. Tiene la fuerza necesaria. cuando sueltas el gatillo salen chispas, según me contesto el fabricante es totalmente normal, es debido a que las escobillas son muy nuevas. Pero funciona genial el peso no es demasiado y viene con dos baterias.'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/Makita-HP457DWE-Taladro-Percutor-Litio-Ion/dp/B00GDFU56A?_encoding=UTF8&psc=1&refRID=D4KSTNHTV7FYJY985F44&linkCode=ll1&tag=sarria93-21&linkId=c98bbd4522dbaa44a604ee793b1bdf69&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -313,7 +339,12 @@ export default function TaladroPercutorScreen(props) {
                     'Muy bueno para uso doméstico. Perfecto en función taladro y atornillador. Importante que sea este modelo concreto con percutor para poder usar en piedra o hormigon por ejemplo. Batería compatible con la serie de 18 v. de la marca, por lo que si tienes más herramientas las puedes intercambiar. Viene sin accesirios como broncas, etc, excepto punta estándar destornillador. El maletín tiene huecos libres para llevar accesorios que compres o incorporar al taladro, lo que resulta cómodo'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/BLACK-DECKER-BCK24D2S-QW-amoladora-transporte/dp/B07NFLGYHM?_encoding=UTF8&refRID=D4KSTNHTV7FYJY985F44&th=1&linkCode=ll1&tag=sarria93-21&linkId=7fbf85ae0f5347e54a3bdeee3bef8818&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>

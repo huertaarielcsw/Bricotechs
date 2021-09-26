@@ -1,5 +1,5 @@
 import Layout from '../../components/Layout';
-import { Divider, Grid, Typography } from '@material-ui/core';
+import { Divider, Grid, Typography, Link } from '@material-ui/core';
 import ProductItem from '../../components/ProductItem';
 import db from '../../utils/db';
 import Product from '../../models/Product';
@@ -20,6 +20,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import TextInfoContent from '@mui-treasury/components/content/textInfo';
 import { useBlogTextInfoContentStyles } from '@mui-treasury/styles/textInfoContent/blog';
+import NextLink from 'next/link';
 
 function createData(name, _1, _2, _3, _4, _5) {
   return { name, _1, _2, _3, _4, _5 };
@@ -134,6 +135,19 @@ export default function CarretillaScreen(props) {
           uso hogareño.
         </Typography>
       </div>
+
+      <Divider light />
+      <div>
+        <h2>Las 5 carretillas más vendidas</h2>
+        <Grid container spacing={3}>
+          {products.map((product) => (
+            <Grid container item md={4} key={product.name}>
+              <ProductItem product={product} />
+            </Grid>
+          ))}
+        </Grid>
+      </div>
+
       <Divider light />
       <div>
         <h2>Comparación</h2>
@@ -152,7 +166,11 @@ export default function CarretillaScreen(props) {
                         width="200px"
                       ></Image>
                     </div>
-                    <div>{product.name}</div>
+                    <div>
+                      <NextLink href={product.link} passHref>
+                        <Link>{product.name}</Link>
+                      </NextLink>
+                    </div>
                   </TableCell>
                 ))}
               </TableRow>
@@ -177,18 +195,6 @@ export default function CarretillaScreen(props) {
 
       <Divider light />
       <div>
-        <h2>Las 5 carretillas más vendidas</h2>
-        <Grid container spacing={3}>
-          {products.map((product) => (
-            <Grid container item md={4} key={product.name}>
-              <ProductItem product={product} />
-            </Grid>
-          ))}
-        </Grid>
-      </div>
-
-      <Divider light />
-      <div>
         <h2>Opiniones de Compradores</h2>
         <Grid container spacing={3}>
           <Grid container item md={12}>
@@ -206,7 +212,12 @@ export default function CarretillaScreen(props) {
                     'Lo utilizo para el trabajo y cumple perfectamente mis necesidades de carga de maletin de herramientas y mochila de trabajo. Excelente producto.'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/ATHLON-TOOLS-Carretilla-almohadillas-antideslizantes/dp/B07QN5JQG9?_encoding=UTF8&psc=1&refRID=35D07WK77N1YWC2VVG6B&linkCode=ll1&tag=sarria93-21&linkId=99a8c09f9664b63d6ba797448b9f3a8b&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -225,7 +236,12 @@ export default function CarretillaScreen(props) {
                     'Pues bien, he transportado hasta 90kg de una vez y varias veces y se ha comportado de 10.'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/Stanley-SXWTD-HT523-Steel-Hand-Truck/dp/B01N95171E?_encoding=UTF8&refRID=35D07WK77N1YWC2VVG6B&th=1&linkCode=ll1&tag=sarria93-21&linkId=3a5de79629b45e6bf7b3a12d3a70870e&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -244,7 +260,12 @@ export default function CarretillaScreen(props) {
                     'Con mas de 3 semanas de uso, aveces INTENSIVO, estoy muy impresionado por la resistencia de este carrito.'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/Hivexagon-Equipaje-Plegable-Capacidad-Transporte/dp/B07R8BQ6V3?_encoding=UTF8&psc=1&refRID=35D07WK77N1YWC2VVG6B&linkCode=ll1&tag=sarria93-21&linkId=aa7ef7989c2f68b36ec5f047e9998ed0&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -265,7 +286,12 @@ export default function CarretillaScreen(props) {
                     'Para transportar algunas cajas de herramientas viene muy bien, no es para llevar gran peso pero si para liberarte de cargar con las herramientas de mano.'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/Meister-8985730-Carretilla-45-plegable/dp/B01MS1Q3QT?_encoding=UTF8&psc=1&refRID=35D07WK77N1YWC2VVG6B&linkCode=ll1&tag=sarria93-21&linkId=9594710adf7d443da66b03ee1778cb62&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -286,7 +312,12 @@ export default function CarretillaScreen(props) {
                     'Resistente, practica , las ruedas te ayudan a bajar y subir escaleras . Yo la uso para trabajar y es perfecta .'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/DURHAND-Carretilla-Plegable-Escalera-Almacenes/dp/B081511DHT?_encoding=UTF8&psc=1&refRID=35D07WK77N1YWC2VVG6B&linkCode=ll1&tag=sarria93-21&linkId=a06afc15f8d6bdb0a18eaea633976739&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>

@@ -1,5 +1,5 @@
 import Layout from '../../components/Layout';
-import { Divider, Grid, Typography } from '@material-ui/core';
+import { Divider, Grid, Typography, Link } from '@material-ui/core';
 import ProductItem from '../../components/ProductItem';
 import db from '../../utils/db';
 import Product from '../../models/Product';
@@ -20,6 +20,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import TextInfoContent from '@mui-treasury/components/content/textInfo';
 import { useBlogTextInfoContentStyles } from '@mui-treasury/styles/textInfoContent/blog';
+import NextLink from 'next/link';
 
 function createData(name, _1, _2, _3, _4, _5) {
   return { name, _1, _2, _3, _4, _5 };
@@ -145,6 +146,19 @@ export default function PiscinaDesmontableScreen(props) {
           .
         </Typography>
       </div>
+
+      <Divider light />
+      <div>
+        <h2>Las 5 piscinas desmontables más vendidas</h2>
+        <Grid container spacing={3}>
+          {products.map((product) => (
+            <Grid container item md={4} key={product.name}>
+              <ProductItem product={product} />
+            </Grid>
+          ))}
+        </Grid>
+      </div>
+
       <Divider light />
       <div>
         <h2>Comparación</h2>
@@ -163,7 +177,11 @@ export default function PiscinaDesmontableScreen(props) {
                         width="200px"
                       ></Image>
                     </div>
-                    <div>{product.name}</div>
+                    <div>
+                      <NextLink href={product.link} passHref>
+                        <Link>{product.name}</Link>
+                      </NextLink>
+                    </div>
                   </TableCell>
                 ))}
               </TableRow>
@@ -188,18 +206,6 @@ export default function PiscinaDesmontableScreen(props) {
 
       <Divider light />
       <div>
-        <h2>Las 5 piscinas desmontables más vendidas</h2>
-        <Grid container spacing={3}>
-          {products.map((product) => (
-            <Grid container item md={4} key={product.name}>
-              <ProductItem product={product} />
-            </Grid>
-          ))}
-        </Grid>
-      </div>
-
-      <Divider light />
-      <div>
         <h2>Opiniones de Compradores</h2>
         <Grid container spacing={3}>
           <Grid container item md={12}>
@@ -219,7 +225,12 @@ export default function PiscinaDesmontableScreen(props) {
                     'Viene muy bien preparada estoy muy satisfecho con la compra'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/Intex-28272NP-Small-Frame-desmontable/dp/B001IWNDDA?_encoding=UTF8&refRID=9BGXWGCA2MAEVJAYYCTR&th=1&linkCode=ll1&tag=sarria93-21&linkId=efff86aada0d21b5efb3f4855ab76fb6&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -242,7 +253,12 @@ export default function PiscinaDesmontableScreen(props) {
                     'La compré hace 2 veranos para un campo, por tanto, montada y desmontada 2 veces. Este verano "confinado" ha sido la única manera de refrescarnos, por lo que la inversión ha sido excelente.'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/Bestway-56416-Desmontable-depuradora-Cartucho/dp/B014FHBB4W?_encoding=UTF8&refRID=9BGXWGCA2MAEVJAYYCTR&th=1&linkCode=ll1&tag=sarria93-21&linkId=c6dd207aa4eafb006f53c7d38743c663&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -265,7 +281,12 @@ export default function PiscinaDesmontableScreen(props) {
                     'Perfecta y muy bonita. El montaje es sencillo, aunque lleve bastante tiempo, sobre 1 hora una persona. Los materiales son de buena calidad.'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/Intex-Metal-Frame-Piscina-desmontable/dp/B00FCT255C?_encoding=UTF8&refRID=9BGXWGCA2MAEVJAYYCTR&th=1&linkCode=ll1&tag=&linkId=7a926e2ff7d913c272fbe637a37e8c4f&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -286,7 +307,12 @@ export default function PiscinaDesmontableScreen(props) {
                     'Piscina correcta para bebés. Al ser cuadrada si el bebé se apoya en los laterales es más difícil que vuelquen.'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/Intex-infantil-hinchable-cuadrada-surtidos/dp/B00C6A5OOO?_encoding=UTF8&psc=1&refRID=9BGXWGCA2MAEVJAYYCTR&linkCode=ll1&tag=sarria93-21&linkId=e336687c3db3c549d5ee00a76b5c58ec&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -309,7 +335,12 @@ export default function PiscinaDesmontableScreen(props) {
                     'Buen producto la tengo hace una semana y de momento todo perfecto'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/Lola-Home-Bestway-57268-depuradora/dp/B014FHC96G?_encoding=UTF8&psc=1&refRID=9BGXWGCA2MAEVJAYYCTR&linkCode=ll1&tag=sarria93-21&linkId=79ebf2b2a250f9dbe8ffbde87fdf9d46&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>

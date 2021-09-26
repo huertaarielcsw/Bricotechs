@@ -1,5 +1,5 @@
 import Layout from '../../components/Layout';
-import { Divider, Grid, Typography } from '@material-ui/core';
+import { Divider, Grid, Typography, Link } from '@material-ui/core';
 import ProductItem from '../../components/ProductItem';
 import db from '../../utils/db';
 import Product from '../../models/Product';
@@ -20,6 +20,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import TextInfoContent from '@mui-treasury/components/content/textInfo';
 import { useBlogTextInfoContentStyles } from '@mui-treasury/styles/textInfoContent/blog';
+import NextLink from 'next/link';
 
 function createData(name, _1, _2, _3, _4, _5) {
   return { name, _1, _2, _3, _4, _5 };
@@ -156,6 +157,19 @@ export default function LijadoraScreen(props) {
           destacable: velocidad, precisión, grandes superficies de trabajo...
         </Typography>
       </div>
+
+      <Divider light />
+      <div>
+        <h2>Las 5 lijadoras más vendidas</h2>
+        <Grid container spacing={3}>
+          {products.map((product) => (
+            <Grid container item md={4} key={product.name}>
+              <ProductItem product={product} />
+            </Grid>
+          ))}
+        </Grid>
+      </div>
+
       <Divider light />
       <div>
         <h2>Comparación</h2>
@@ -174,7 +188,11 @@ export default function LijadoraScreen(props) {
                         width="200px"
                       ></Image>
                     </div>
-                    <div>{product.name}</div>
+                    <div>
+                      <NextLink href={product.link} passHref>
+                        <Link>{product.name}</Link>
+                      </NextLink>
+                    </div>
                   </TableCell>
                 ))}
               </TableRow>
@@ -199,18 +217,6 @@ export default function LijadoraScreen(props) {
 
       <Divider light />
       <div>
-        <h2>Las 5 lijadoras más vendidas</h2>
-        <Grid container spacing={3}>
-          {products.map((product) => (
-            <Grid container item md={4} key={product.name}>
-              <ProductItem product={product} />
-            </Grid>
-          ))}
-        </Grid>
-      </div>
-
-      <Divider light />
-      <div>
         <h2>Opiniones de Compradores</h2>
         <Grid container spacing={3}>
           <Grid container item md={12}>
@@ -230,7 +236,12 @@ export default function LijadoraScreen(props) {
                     'una relación calidad/precio increíble, viene con un montón de lijas, es un abrir y usar. Ademas funciona de maravilla, el uso que le he dado ha sido para lijado de paredes y muebles de madera, sin pega ninguna.'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/BEW230BC-QS-Lijadora-di%C3%A1metro-Accesorios-Transporte/dp/B07MKNMDD4?_encoding=UTF8&refRID=NSBTMPGBAZ5NXZB52ZWR&th=1&linkCode=ll1&tag=sarria93-21&linkId=43ec299f17f1a79f2707558c4f052909&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -251,7 +262,12 @@ export default function LijadoraScreen(props) {
                     'Mejor imposible, me llegó en menos de un día, perfecto, en su caja oficial, con una lija de cada tipo. Tras conectarla y probarla IMPRESIONANTE.'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/Bosch-Multilijadora-hojas-malet%C3%ADn-carreras/dp/B00IPIYLO0?_encoding=UTF8&psc=1&refRID=NSBTMPGBAZ5NXZB52ZWR&linkCode=ll1&tag=sarria93-21&linkId=65f27e01389253c62a4024520bf89d57&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -272,7 +288,12 @@ export default function LijadoraScreen(props) {
                     'Buscaba una lijadora para proyectos caseros de bricolaje. Y no puedo estar mas contenta.'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/Lijadora-El%C3%A9ctrica-Tilswall-Detalles-15000RPM/dp/B07X8ZR5WD?_encoding=UTF8&psc=1&refRID=NSBTMPGBAZ5NXZB52ZWR&linkCode=ll1&tag=sarria93-21&linkId=a935cb4f629525e24d0ee280474df994&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -293,7 +314,12 @@ export default function LijadoraScreen(props) {
                     ' Buena lijadora para uso en bricolaje y semi profesional,su tamaño es medio ,poco peso agarre ergonómico variador de velocidad y recogida de polvo una lijadora muy práctica...'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/Lijadora-HYCHIKA-Velocidad-Ajustable-El%C3%A9ctrica/dp/B08DHP1D2X?_encoding=UTF8&psc=1&refRID=NSBTMPGBAZ5NXZB52ZWR&linkCode=ll1&tag=sarria93-21&linkId=5fe374b9d5bb54a83212d7ee1c48191d&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -314,7 +340,12 @@ export default function LijadoraScreen(props) {
                     'La he podido usar en dos ocasiones para manualidades y va perfecta. El muy fácil de usar, solo tiene un botón el cual hay que mover para ponerla en marcha y apagarla. Deja la superficie lisa con poco esfuerzo.'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/El%C3%A9ctrica-TECCPO-Professional-Contenedor-Reutilizable/dp/B07VPQLZ6T?_encoding=UTF8&psc=1&refRID=NSBTMPGBAZ5NXZB52ZWR&linkCode=ll1&tag=sarria93-21&linkId=b449e2db79349481bbf8f636b1e2ba23&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>

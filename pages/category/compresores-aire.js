@@ -1,5 +1,5 @@
 import Layout from '../../components/Layout';
-import { Divider, Grid, Typography } from '@material-ui/core';
+import { Divider, Grid, Typography, Link } from '@material-ui/core';
 import ProductItem from '../../components/ProductItem';
 import db from '../../utils/db';
 import Product from '../../models/Product';
@@ -20,6 +20,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import TextInfoContent from '@mui-treasury/components/content/textInfo';
 import { useBlogTextInfoContentStyles } from '@mui-treasury/styles/textInfoContent/blog';
+import NextLink from 'next/link';
 
 function createData(name, _1, _2, _3, _4, _5) {
   return { name, _1, _2, _3, _4, _5 };
@@ -159,6 +160,19 @@ export default function CompresorAireScreen(props) {
           .
         </Typography>
       </div>
+
+      <Divider light />
+      <div>
+        <h2>Los 5 compresores de aire más vendidos</h2>
+        <Grid container spacing={3}>
+          {products.map((product) => (
+            <Grid container item md={4} key={product.name}>
+              <ProductItem product={product} />
+            </Grid>
+          ))}
+        </Grid>
+      </div>
+
       <Divider light />
       <div>
         <h2>Comparación</h2>
@@ -177,7 +191,11 @@ export default function CompresorAireScreen(props) {
                         width="200px"
                       ></Image>
                     </div>
-                    <div>{product.name}</div>
+                    <div>
+                      <NextLink href={product.link} passHref>
+                        <Link>{product.name}</Link>
+                      </NextLink>
+                    </div>
                   </TableCell>
                 ))}
               </TableRow>
@@ -202,18 +220,6 @@ export default function CompresorAireScreen(props) {
 
       <Divider light />
       <div>
-        <h2>Los 5 compresores de aire más vendidos</h2>
-        <Grid container spacing={3}>
-          {products.map((product) => (
-            <Grid container item md={4} key={product.name}>
-              <ProductItem product={product} />
-            </Grid>
-          ))}
-        </Grid>
-      </div>
-
-      <Divider light />
-      <div>
         <h2>Opiniones de Compradores</h2>
         <Grid container spacing={3}>
           <Grid container item md={12}>
@@ -231,7 +237,12 @@ export default function CompresorAireScreen(props) {
                     'ya no me da pereza hacer bricolaje, aguanta muy bien y trabaja muy bien hasta 8 bares, no necesita mantenimiento y tiene potencia más que suficiente para mi nivel de bricolaje (clavar, grapar, etc).'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/Stanley-DN200-8-6-Compresor/dp/B00IRA7GTS?_encoding=UTF8&refRID=TGE2Z6548S9XKC7K9XAG&th=1&linkCode=ll1&tag=sarria93-21&linkId=fe40de424a22e1e71308728382230a4d&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -254,7 +265,12 @@ export default function CompresorAireScreen(props) {
                     'El conjunto cumple su función , para reajustar la presión de las ruedas del coche, incluida la de repuesto.'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/compresor-EasyPump-autom%C3%A1tica-recargable-mediante/dp/B08HQHW4LS?_encoding=UTF8&psc=1&refRID=TGE2Z6548S9XKC7K9XAG&linkCode=ll1&tag=sarria93-21&linkId=1178b72e2d966a0940ac38c0b3862b42&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -275,7 +291,12 @@ export default function CompresorAireScreen(props) {
                     'El aparato es increíblemente preciso y fácil de usar. Es robusto y denota calidad por los cuatro costados.'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/Michelin-009519-Compresor-Digital-12-V/dp/B00KMZZJWC?_encoding=UTF8&refRID=TGE2Z6548S9XKC7K9XAG&th=1&linkCode=ll1&tag=sarria93-21&linkId=1b88abc98e20865505614aa19f77ac20&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -296,7 +317,12 @@ export default function CompresorAireScreen(props) {
                     'Buen producto de la empresa Michelin como todos los que produce.'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/Michelin-CA-6211860003-Inflador-presi%C3%B3n-homologado/dp/B00SRX9MQA?_encoding=UTF8&refRID=TGE2Z6548S9XKC7K9XAG&th=1&linkCode=ll1&tag=sarria93-21&linkId=0a99c2ee0fc1e30ae003e62395b907ec&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -315,7 +341,12 @@ export default function CompresorAireScreen(props) {
                     'Opino despues de 3 años de uso,debo decir que va como el primer dia ,mi uso es para hinchar colchonetas,balones y presion del coche,ya que siempre lo llevo en el coche,cumple ?? si!!'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/Black-Decker-ASI300-QS-Compresor-aire/dp/B003A5ZBY2?_encoding=UTF8&refRID=TGE2Z6548S9XKC7K9XAG&th=1&linkCode=ll1&tag=sarria93-21&linkId=cb51261fea3257ccbcfeefecfe631b69&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>

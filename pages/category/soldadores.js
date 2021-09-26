@@ -1,5 +1,5 @@
 import Layout from '../../components/Layout';
-import { Divider, Grid, Typography } from '@material-ui/core';
+import { Divider, Grid, Typography, Link } from '@material-ui/core';
 import ProductItem from '../../components/ProductItem';
 import db from '../../utils/db';
 import Product from '../../models/Product';
@@ -20,6 +20,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import TextInfoContent from '@mui-treasury/components/content/textInfo';
 import { useBlogTextInfoContentStyles } from '@mui-treasury/styles/textInfoContent/blog';
+import NextLink from 'next/link';
 
 function createData(name, _1, _2, _3, _4, _5) {
   return { name, _1, _2, _3, _4, _5 };
@@ -126,6 +127,19 @@ export default function SoldadorScreen(props) {
           unión fija a la que se le denomina cordón.
         </Typography>
       </div>
+
+      <Divider light />
+      <div>
+        <h2>Los 5 soldadores más vendidos</h2>
+        <Grid container spacing={3}>
+          {products.map((product) => (
+            <Grid container item md={4} key={product.name}>
+              <ProductItem product={product} />
+            </Grid>
+          ))}
+        </Grid>
+      </div>
+
       <Divider light />
       <div>
         <h2>Comparación</h2>
@@ -144,7 +158,11 @@ export default function SoldadorScreen(props) {
                         width="200px"
                       ></Image>
                     </div>
-                    <div>{product.name}</div>
+                    <div>
+                      <NextLink href={product.link} passHref>
+                        <Link>{product.name}</Link>
+                      </NextLink>
+                    </div>
                   </TableCell>
                 ))}
               </TableRow>
@@ -169,18 +187,6 @@ export default function SoldadorScreen(props) {
 
       <Divider light />
       <div>
-        <h2>Los 5 soldadores más vendidos</h2>
-        <Grid container spacing={3}>
-          {products.map((product) => (
-            <Grid container item md={4} key={product.name}>
-              <ProductItem product={product} />
-            </Grid>
-          ))}
-        </Grid>
-      </div>
-
-      <Divider light />
-      <div>
         <h2>Opiniones de Compradores</h2>
         <Grid container spacing={3}>
           <Grid container item md={12}>
@@ -200,7 +206,12 @@ export default function SoldadorScreen(props) {
                     '... la compra es totalmente recomendable, relación calidad precio muy buena, además tiene regulación de temperatura.'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/%C2%B7Durable-Soldador-electrico-Destornilladores-Soldadura/dp/B07MW64Z9H?_encoding=UTF8&refRID=QJGZR3QF2MEDPG5TDGNC&th=1&linkCode=ll1&tag=sarria93-21&linkId=0fa13090428ae9c59d045b6597d670bb&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -219,7 +230,12 @@ export default function SoldadorScreen(props) {
                     'Muy buena antorcha, practica y manuable su peso es muy práctico y se pueden hacer muchos trabajos.'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/Campingaz-2000026173-Soldador/dp/B01AJE8OH2?_encoding=UTF8&psc=1&refRID=QJGZR3QF2MEDPG5TDGNC&linkCode=ll1&tag=sarria93-21&linkId=09bf3607a3174248b93dc9b61fe3eb2d&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -240,7 +256,12 @@ export default function SoldadorScreen(props) {
                     'De todos los soldadores de gas que he tenido, este, con diferencia, es el mejor.'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/Dremel-Versatip-2000-6-encendido-accesorios/dp/B000QGC6XW?_encoding=UTF8&refRID=QJGZR3QF2MEDPG5TDGNC&th=1&linkCode=ll1&tag=sarria93-21&linkId=860d72f1c92269e161575a85d678ffee&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -261,7 +282,12 @@ export default function SoldadorScreen(props) {
                     'Genial muy fácil de usar la verdad q un gran invento para hacer bricos y arreglar plásticos que veías imposibles con pegamentos, una máquina que me sorprendió muy completa y de fácil manipulación.'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/Bostar-Parachoques-Autom%C3%A1ticos-Herramienta-Guardafango/dp/B08GXBJHR5?_encoding=UTF8&psc=1&refRID=QJGZR3QF2MEDPG5TDGNC&linkCode=ll1&tag=sarria93-21&linkId=11d1e7bb5e801d98f1167b37ae565a3c&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -282,7 +308,12 @@ export default function SoldadorScreen(props) {
                     'Es la máquina ideal para trabajos en casa pero si necesitas algo potente también sirve muy satisfecho'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/STAYER-1-2381-Equipo-Soldadura-Inverter/dp/B08YRSM21X?_encoding=UTF8&psc=1&refRID=QJGZR3QF2MEDPG5TDGNC&linkCode=ll1&tag=sarria93-21&linkId=3c3853d791a5700d9775c18e59e99d5f&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>

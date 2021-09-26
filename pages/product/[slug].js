@@ -30,7 +30,7 @@ export default function ProductScreen(props) {
     <Layout title={product.name} description={product.description}>
       <div className={classes.section}>
         <NextLink href="/" passHref>
-          <Link>Volver A Productos</Link>
+          <Link>Volver A Página Principal</Link>
         </NextLink>
       </div>
       <Grid container spacing={1}>
@@ -103,7 +103,12 @@ export default function ProductScreen(props) {
                 </Grid>
               </ListItem>
               <ListItem>
-                <Button fullWidth variant="contained" color="primary">
+                <Button
+                  fullWidth
+                  variant="contained"
+                  color="primary"
+                  href={product.link}
+                >
                   Comprar en Amazon
                 </Button>
               </ListItem>

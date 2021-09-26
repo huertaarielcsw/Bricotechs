@@ -1,5 +1,5 @@
 import Layout from '../../components/Layout';
-import { Divider, Grid, Typography } from '@material-ui/core';
+import { Divider, Grid, Typography, Link } from '@material-ui/core';
 import ProductItem from '../../components/ProductItem';
 import db from '../../utils/db';
 import Product from '../../models/Product';
@@ -20,6 +20,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import TextInfoContent from '@mui-treasury/components/content/textInfo';
 import { useBlogTextInfoContentStyles } from '@mui-treasury/styles/textInfoContent/blog';
+import NextLink from 'next/link';
 
 function createData(name, _1, _2, _3, _4, _5) {
   return { name, _1, _2, _3, _4, _5 };
@@ -166,6 +167,19 @@ export default function AmoladoraScreen(props) {
           <strong>bricolaje casero</strong>.
         </Typography>
       </div>
+
+      <Divider light />
+      <div>
+        <h2>Las 5 amoladoras más vendidas</h2>
+        <Grid container spacing={3}>
+          {products.map((product) => (
+            <Grid container item md={4} key={product.name}>
+              <ProductItem product={product} />
+            </Grid>
+          ))}
+        </Grid>
+      </div>
+
       <Divider light />
       <div>
         <h2>Comparación</h2>
@@ -184,7 +198,12 @@ export default function AmoladoraScreen(props) {
                         width="200px"
                       ></Image>
                     </div>
-                    <div>{product.name}</div>
+
+                    <div>
+                      <NextLink href={product.link} passHref>
+                        <Link>{product.name}</Link>
+                      </NextLink>
+                    </div>
                   </TableCell>
                 ))}
               </TableRow>
@@ -209,18 +228,6 @@ export default function AmoladoraScreen(props) {
 
       <Divider light />
       <div>
-        <h2>Las 5 amoladoras más vendidas</h2>
-        <Grid container spacing={3}>
-          {products.map((product) => (
-            <Grid container item md={4} key={product.name}>
-              <ProductItem product={product} />
-            </Grid>
-          ))}
-        </Grid>
-      </div>
-
-      <Divider light />
-      <div>
         <h2>Opiniones de Compradores</h2>
         <Grid container spacing={3}>
           <Grid container item md={12}>
@@ -240,7 +247,12 @@ export default function AmoladoraScreen(props) {
                     'Perfecta en relación calidad precio. El resto cumple sobradamente para pequeños trabajos de bricolaje.'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/BLACK-DECKER-BEG010-QS-Amoladora-12-000/dp/B07N17F4BL?_encoding=UTF8&refRID=TA4Z8TTZ9RF8AJWMX8CG&th=1&linkCode=ll1&tag=sarria93-21&linkId=1b30c2a015bdedde3d1f8b8c234858cd&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -261,7 +273,12 @@ export default function AmoladoraScreen(props) {
                     'Me gustó todo, no hay nada que objetar sobre esta herramienta que a mi me vino sin ningún problema y funcionando perfectamente. '
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/Bosch-GWS-7-115-Professional-Miniamoladora/dp/B018YPAI9A?_encoding=UTF8&refRID=TA4Z8TTZ9RF8AJWMX8CG&th=1&linkCode=ll1&tag=sarria93-21&linkId=568aacd357007c7d2b68d25ef269b2ab&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -282,7 +299,12 @@ export default function AmoladoraScreen(props) {
                     'Tiene buena potencia y no vibra mucho,para uso doméstico va perfecta'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/Einhell-4430619-125-di%C3%A1metro-850/dp/B00TFZFVL4?_encoding=UTF8&refRID=TA4Z8TTZ9RF8AJWMX8CG&th=1&linkCode=ll1&tag=sarria93-21&linkId=78b7bf0ce3fe53441fa795c0a56ded98&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -303,7 +325,12 @@ export default function AmoladoraScreen(props) {
                     'Muy robusta y suave al corte. La pillè en oferta y de momento va de lujo. '
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/Amoladora-Profesional-Tilswall-Esmerilado-Protectora/dp/B07VQ5MPZL?_encoding=UTF8&psc=1&refRID=TA4Z8TTZ9RF8AJWMX8CG&linkCode=ll1&tag=sarria93-21&linkId=4a2390399e542069107edd08b32035ac&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -324,7 +351,12 @@ export default function AmoladoraScreen(props) {
                     'Como siempre, hychika marca de calidad y fiable a precio de mortales...'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/HYCHIKA-BETTER-TOOLS-FOR-LIFE/dp/B08DJ4NWHS?_encoding=UTF8&psc=1&refRID=TA4Z8TTZ9RF8AJWMX8CG&linkCode=ll1&tag=sarria93-21&linkId=1495d2d2148aaf57a6a957123c6ae2fe&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>

@@ -1,5 +1,5 @@
 import Layout from '../../components/Layout';
-import { Divider, Grid, Typography } from '@material-ui/core';
+import { Divider, Grid, Typography, Link } from '@material-ui/core';
 import ProductItem from '../../components/ProductItem';
 import db from '../../utils/db';
 import Product from '../../models/Product';
@@ -20,6 +20,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import TextInfoContent from '@mui-treasury/components/content/textInfo';
 import { useBlogTextInfoContentStyles } from '@mui-treasury/styles/textInfoContent/blog';
+import NextLink from 'next/link';
 
 function createData(name, _1, _2, _3, _4, _5) {
   return { name, _1, _2, _3, _4, _5 };
@@ -155,6 +156,19 @@ export default function TaladroAtornilladorScreen(props) {
           taladro dependiendo de los tipos de brocas que utilices.
         </Typography>
       </div>
+
+      <Divider light />
+      <div>
+        <h2>Los 5 taladros atornilladores más vendidos</h2>
+        <Grid container spacing={3}>
+          {products.map((product) => (
+            <Grid container item md={4} key={product.name}>
+              <ProductItem product={product} />
+            </Grid>
+          ))}
+        </Grid>
+      </div>
+
       <Divider light />
       <div>
         <h2>Comparación</h2>
@@ -173,7 +187,11 @@ export default function TaladroAtornilladorScreen(props) {
                         width="200px"
                       ></Image>
                     </div>
-                    <div>{product.name}</div>
+                    <div>
+                      <NextLink href={product.link} passHref>
+                        <Link>{product.name}</Link>
+                      </NextLink>
+                    </div>
                   </TableCell>
                 ))}
               </TableRow>
@@ -194,18 +212,6 @@ export default function TaladroAtornilladorScreen(props) {
             </TableBody>
           </Table>
         </TableContainer>
-      </div>
-
-      <Divider light />
-      <div>
-        <h2>Los 5 taladros atornilladores más vendidos</h2>
-        <Grid container spacing={3}>
-          {products.map((product) => (
-            <Grid container item md={4} key={product.name}>
-              <ProductItem product={product} />
-            </Grid>
-          ))}
-        </Grid>
       </div>
 
       <Divider light />
@@ -231,7 +237,12 @@ export default function TaladroAtornilladorScreen(props) {
                     'Destaco sobre todo la potencia para atornillar/desatornillar que tiene el aparato, cargándose solo a través de USB (yo lo he hecho con un adaptador a corriente). También destacar el numero de diferentes cabezales que tiene, y la adaptación para poder atornillar en 35/40º o recto. Por ultimo también merece mención el tiempo que permanece funcionando con una sola carga de USB, y las dos bombillas LED que posee.'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/Destornillador-HYCHIKA-Atornillador-Inal%C3%A1mbrico-Accesorios/dp/B086SQK2RK?_encoding=UTF8&psc=1&refRID=JZ7WZC0127YKQZ9D6798&linkCode=ll1&tag=sarria93-21&linkId=8c28bf90553ea943cc355077905fe972&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -254,7 +265,12 @@ export default function TaladroAtornilladorScreen(props) {
                     'Ha sido una de las mejores compras que he hecho. Los tornillos se ponen en un segundo y casi sin esfuerzo. La batería de momento me ha durado bastante, además voy utilizando las dos que vienen para que no se me degrade ninguna de ellas por no utlizarla. Además también he podido utilizarlo para hacer taladros en una mesa de madera. No lo recomendaría para hacer taladros en la pared ya que no creo que tenga la potencia suficiente. Para uso en madera y materiales más blandos está bien.'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/Atornillador-Bater%C3%ADas-HYCHIKA-Destornillador-El%C3%A9ctrico/dp/B082HTSRYV?_encoding=UTF8&psc=1&refRID=JZ7WZC0127YKQZ9D6798&linkCode=ll1&tag=sarria93-21&linkId=ecd675e84027b6f9b34c94aa5244b74f&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -277,7 +293,12 @@ export default function TaladroAtornilladorScreen(props) {
                     'Atornillador muy completo, tienes todo lo que puedes a llegar necesitar en casa, ya que personalmente creo que es para eso, bricolaje amateur, yo lo he usado y comprado para el montaje de una habitación y me lo ha hecho fácil.'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/Atornillador-GOXAWEE-Destornillador-Velocidades-Portabrocas/dp/B08L7RBTW8?_encoding=UTF8&psc=1&refRID=JZ7WZC0127YKQZ9D6798&linkCode=ll1&tag=sarria93-21&linkId=94f50e1a89f979e14962352ea60a63a3&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -300,7 +321,12 @@ export default function TaladroAtornilladorScreen(props) {
                     'No soy muy dado a estas cosas, pero lo compré a un buen precio y tenía todo lo que necesitaba y más. Funcionó perfectamente y va con dos baterías y pude trabajar tranquilamente con solo una. Al menos, para tenerlo en casa por si acaso hace falta, es perfecto. Puede que para alguien que le dé un uso fuerte no sea tan buena.'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/TEENO-taladro-bater%C3%ADas-accesorios-profesionales/dp/B075FPNWM2?_encoding=UTF8&psc=1&refRID=JZ7WZC0127YKQZ9D6798&linkCode=ll1&tag=sarria93-21&linkId=725362d1617b0d1ae9cabd9c44db7e9e&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -323,7 +349,12 @@ export default function TaladroAtornilladorScreen(props) {
                     'Puede parecer una tontería dudar si se necesita, pero es realmente muy util para conseguir atornillar o desatornillar tornillos sin apenas esfuerzo. Es "salud" para tu muñeca, y lo hace todo más fácil y rápido. Por poner una comparativa, es como si montas claras a mano o lo haces con un accesorio de tu batidora. Se puede hacer de ambas formas, pero hay diferencia en la comodidad.'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/BLACK-DECKER-BCF611CK-QW-Atornillador-bater%C3%ADa/dp/B07TFHGZXF?_encoding=UTF8&psc=1&refRID=JZ7WZC0127YKQZ9D6798&linkCode=ll1&tag=sarria93-21&linkId=8f64e0c1b5ce5726ed532f2321b17a3c&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>

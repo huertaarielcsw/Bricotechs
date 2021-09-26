@@ -1,5 +1,5 @@
 import Layout from '../../components/Layout';
-import { Divider, Grid, Typography } from '@material-ui/core';
+import { Divider, Grid, Typography, Link } from '@material-ui/core';
 import ProductItem from '../../components/ProductItem';
 import db from '../../utils/db';
 import Product from '../../models/Product';
@@ -20,6 +20,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import TextInfoContent from '@mui-treasury/components/content/textInfo';
 import { useBlogTextInfoContentStyles } from '@mui-treasury/styles/textInfoContent/blog';
+import NextLink from 'next/link';
 
 function createData(name, _1, _2, _3, _4, _5) {
   return { name, _1, _2, _3, _4, _5 };
@@ -136,6 +137,19 @@ export default function TranspaletaScreen(props) {
           actividades de almacenaje.
         </Typography>
       </div>
+
+      <Divider light />
+      <div>
+        <h2>Las 5 transpaletas más vendidas</h2>
+        <Grid container spacing={3}>
+          {products.map((product) => (
+            <Grid container item md={4} key={product.name}>
+              <ProductItem product={product} />
+            </Grid>
+          ))}
+        </Grid>
+      </div>
+
       <Divider light />
       <div>
         <h2>Comparación</h2>
@@ -154,7 +168,11 @@ export default function TranspaletaScreen(props) {
                         width="200px"
                       ></Image>
                     </div>
-                    <div>{product.name}</div>
+                    <div>
+                      <NextLink href={product.link} passHref>
+                        <Link>{product.name}</Link>
+                      </NextLink>
+                    </div>
                   </TableCell>
                 ))}
               </TableRow>
@@ -179,18 +197,6 @@ export default function TranspaletaScreen(props) {
 
       <Divider light />
       <div>
-        <h2>Las 5 transpaletas más vendidas</h2>
-        <Grid container spacing={3}>
-          {products.map((product) => (
-            <Grid container item md={4} key={product.name}>
-              <ProductItem product={product} />
-            </Grid>
-          ))}
-        </Grid>
-      </div>
-
-      <Divider light />
-      <div>
         <h2>Opiniones de Compradores</h2>
         <Grid container spacing={3}>
           <Grid container item md={12}>
@@ -206,7 +212,12 @@ export default function TranspaletaScreen(props) {
                   heading={'WOLFPACK LINEA PROFESIONAL Transpaleta De Almacen'}
                   body={'-'}
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/Transpaleta-Almacen-Ruedas-Nylon-T/dp/B01MZ1LTPF?_encoding=UTF8&psc=1&refRID=KXKQARH1AAZ85YT0NPR8&linkCode=ll1&tag=sarria93-21&linkId=e9bca18198c18a8a0dc23518049f3cd6&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -227,7 +238,12 @@ export default function TranspaletaScreen(props) {
                     'Envío muy rápido, incluso antes de su posible fecha de entrega. Muy buena y robusta transpaleta'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/Ayerbe-transpaletas-Transpaleta-ay-2500-thn-ruedas/dp/B00CWZRFLS?_encoding=UTF8&psc=1&refRID=KXKQARH1AAZ85YT0NPR8&linkCode=ll1&tag=sarria93-21&linkId=83c8fe1953e3aa042eed7e00897d895c&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -244,7 +260,12 @@ export default function TranspaletaScreen(props) {
                   heading={'Transpaleta Manual 2500 kg'}
                   body={'-'}
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/Pramac-Transpaleta-manual-2500-1150x525/dp/B07BYV79WC?_encoding=UTF8&psc=1&refRID=KXKQARH1AAZ85YT0NPR8&linkCode=ll1&tag=sarria93-21&linkId=28aba0742103948b215f01b0d22180f9&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -263,7 +284,12 @@ export default function TranspaletaScreen(props) {
                     'Pues yo estoy encantado con la transpaleta, para el uso que la quería cumple de sobras. Como punto fuerte las Ruedas que son de goma, no de nylon o plastico duro, por lo que no hace ruido al deslazarla.'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/Einhell-Transpaleta-estructura-resistente-eigenschaft/dp/B01NCIJSFB?_encoding=UTF8&psc=1&refRID=KXKQARH1AAZ85YT0NPR8&linkCode=ll1&tag=sarria93-21&linkId=0011660f131409bdcd1fc55459ea8217&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>
@@ -282,7 +308,12 @@ export default function TranspaletaScreen(props) {
                     'Perfecto y calidad precio inmejorable, transpalet de 10!'
                   }
                 />
-                <Button className={buttonStyles}>Read more</Button>
+                <Button
+                  className={buttonStyles}
+                  href="https://www.amazon.es/Ayerbe-M110167-Traspaleta-ruedas-vulkollan/dp/B00SP96PNO?_encoding=UTF8&psc=1&refRID=KXKQARH1AAZ85YT0NPR8&linkCode=ll1&tag=sarria93-21&linkId=ad4508069232540b60bbd176ef1026d2&language=es_ES&ref_=as_li_ss_tl"
+                >
+                  Leer más
+                </Button>
               </CardContent>
             </Card>
           </Grid>

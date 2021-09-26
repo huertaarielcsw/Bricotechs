@@ -32,11 +32,7 @@ export default function ProductItem({ product }) {
       </NextLink>
       <CardActions>
         <Typography>{product.price}€</Typography>
-        <Button
-          size="small"
-          color="primary"
-          href="https://www.amazon.es/taladros-atornilladores/b?ie=UTF8&node=3049734031"
-        >
+        <Button size="small" color="primary" href={product.link}>
           Comprar en Amazon
         </Button>
       </CardActions>
