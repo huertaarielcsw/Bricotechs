@@ -9,7 +9,19 @@ import data from '../utils/data';
 export default function Home(props) {
   const { products } = props;
   return (
-    <Layout>
+    <Layout
+      title="Mejores herramientas de bricolaje"
+      description="Las 5 amoladoras más vendidas en Amazon España
+    Las 5 carretillas elevadoras más vendidas en Amazon España
+    Las 5 carretillas más vendidas en Amazon España
+    Los 5 compresores de aire más vendidos en Amazon España
+    Las 5 lijadoras más vendidas en Amazon España
+    Las 5 piscinas desmontables más vendidas en Amazon España
+    Los 5 soldadores más vendidos en Amazon España
+    Los 5 taladros atornilladores más vendidos en Amazon España
+    Los 5 taladros percutores más vendidos en Amazon España
+    Las 5 transpaletas más vendidas en Amazon España"
+    >
       <header>
         <div>
           <h1>Para Apasionados del Bricolaje</h1>

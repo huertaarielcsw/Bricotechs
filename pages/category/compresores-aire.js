@@ -140,7 +140,14 @@ export default function CompresorAireScreen(props) {
   const { button: buttonStyles, ...contentStyles } =
     useBlogTextInfoContentStyles();
   return (
-    <Layout>
+    <Layout
+      title="Los 5 compresores de aire más vendidos en Amazon España"
+      description="Stanley DN200/8/6 - Compresor de aire
+      Bosch compresor de aire a batería EasyPump (batería de 3,0 Ah, 3,6 voltios, función de parada automática, 150 psi, 10,3 bar, LED, recargable mediante cable USB-C, en caja)
+      MICHELIN 9519 Compresor de aire portatil programable, 12 V
+      MICHELIN - Inflador con medidor de presión de neumáticos - Presión máxima: 10 bar - Homologado, negro, norme
+      Black+Decker ASI300-QS - Compresor de aire, 160 PSI, 11 bar, Fuente de alimentación: Cable eléctrico, Rojo/Negro"
+    >
       <header>
         <div>
           <h1>Compresores de aire</h1>

@@ -135,7 +135,14 @@ export default function TaladroPercutorScreen(props) {
   const { button: buttonStyles, ...contentStyles } =
     useBlogTextInfoContentStyles();
   return (
-    <Layout>
+    <Layout
+      title="Los 5 taladros percutores más vendidos en Amazon España"
+      description="BLACK+DECKER BEH200-QS Taladro percutor con cable 500W, 230V, incluye empuñadura lateral, 500 W
+      Bosch EasyImpact 550 - Taladro percutor (550 W, empuñadura adicional, tope de profundidad, maletín)
+      Martillo Percutor, Martillo Perforador, 5J Energía de Impacto, SDS Plus Mandril, 4 Funciones en 1 con Embrague de Seguridad, Utilizado para Concreto, Metal y Piedra - TRH02A
+      Makita HP457DWE - Taladro Percutor A Bateria 18V Litio-Ion 1.5 Ah [Clase de eficiencia energética A]
+      BLACK+DECKER BCK24D2S-QW - Taladro Percutor 18V (21.000 ipm) y amoladora 125 mm 18V, con 2 baterías litio 2Ah y bolsa de transporte"
+    >
       <header>
         <div>
           <h1>Taladro Percutor</h1>

@@ -106,6 +106,11 @@ export default function Layout({ title, description, children }) {
       <Head>
         <title>{title ? `${title} - BricoTechs` : 'BricoTechs'}</title>
         {description && <meta name="description" content={description}></meta>}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2405009743639501"
+          crossOrigin="anonymous"
+        ></script>
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />

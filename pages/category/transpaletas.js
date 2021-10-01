@@ -116,7 +116,14 @@ export default function TranspaletaScreen(props) {
   const { button: buttonStyles, ...contentStyles } =
     useBlogTextInfoContentStyles();
   return (
-    <Layout>
+    <Layout
+      title="Las 5 transpaletas más vendidas en Amazon España"
+      description="WOLFPACK LINEA PROFESIONAL Transpaleta De Almacen Ruedas Poliuretano 2,5 T.
+      Ayerbe transpaletas - Transpaleta ay-2500-thn ruedas nylon
+      Transpaleta Manual 2500 kg, Horquillas 1150x525 mm, Ruedas Poliuretano/Rodillos Nylon
+      Einhell palé Transpaleta TC de PT 2500 (carga 2500 kg, tenedor Altura 80 – 190 mm, estructura resistente en acero, ruhige unidad eigenschaft el Poco rodadura)
+      Ayerbe M110167 - Traspaleta 2500 kg ruedas de vulkollan"
+    >
       <header>
         <div>
           <h1>Transpaletas</h1>

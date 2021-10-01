@@ -135,7 +135,14 @@ export default function TaladroAtornilladorScreen(props) {
   const { button: buttonStyles, ...contentStyles } =
     useBlogTextInfoContentStyles();
   return (
-    <Layout>
+    <Layout
+      title="Los 5 taladros atornilladores más vendidos en Amazon España"
+      description="Destornillador Eléctrico 6N.m, HYCHIKA Atornillador Eléctrico Inalámbrico 3.6v Batería 2000mAh (Máximo Par 6 N.m) LED Luz, Mandril Magnético, Cargador con Cable 3.5mm, 20 Accesorios
+      Taladro Atornillador 12V con 2 Baterías, HYCHIKA Destornillador Eléctrico, 30N.m Par Máx, 1.5 Ah Batería, 1 Hora de Carga Rápida, 6PCS Puntas y HSS Brocas, 5PCS Llaves de vaso, 4PCS Brocas de Madera
+      Taladro Atornillador 2 Baterías, GOXAWEE 100Pcs Kit Taladro Bateria/Destornillador Eléctrico (2 Baterías de Litio 1500mAh, 30N.m Par Máx, 2 Velocidades, 10mm Portabrocas Automático)
+      Taladro Atornillador 21V, TEENO 41Pcs Kit Destornillador Eléctrico (2 Baterías de Litio 1500mAh, 40N.m Par Máx, 2 Velocidades, 10mm Portabrocas Automatico)
+      BLACK+DECKER BCF611CK-QW - Atornillador a batería 3.6V(1.5Ah) litio, 5.5Nm, de carga rápida"
+    >
       <header>
         <div>
           <h1>Taladro Atornillador</h1>

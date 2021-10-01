@@ -142,7 +142,14 @@ export default function LijadoraScreen(props) {
   const { button: buttonStyles, ...contentStyles } =
     useBlogTextInfoContentStyles();
   return (
-    <Layout>
+    <Layout
+      title="Las 5 lijadoras más vendidas en Amazon España"
+      description="BLACK+DECKER Lijadora de Detalle Mouse 55W 11.000RPM Diametro Orbita 1.5mm Incluye 15 Accesorios y Bolsa de Transporte BEW230BC-QS
+      Bosch PSM 100 A - Multilijadora, 3 hojas de lija K 80/ K 120/ K 160, maletín (100 W, nº de carreras en vacío: 26.000 opm, Ø circuito oscilante: 1,4 mm)
+      Lijadora Eléctrica 200W Tilswall, 15000RPM Lijadora de Detalles Mouse de Diámetro Orbital 1,6mm, con 12 Piezas Lijas de 60 grano y de 120 grano para Alisar Madera y Quitar Pintura
+      Lijadora Orbital 300W, HYCHIKA Lijadora Eléctrica con Motor de Cobre Puro, 6 Velocidad, 13000RPM, 12PCS Lija de 125mm (240/120/80 Grano), con Bolsillo Lavable de Recogida, para Lijar Madera y Metal
+      Lijadora Eléctrica, TECCPO Máquina Lijadora Compacta para Madera, 15500 RPM con Recolección de Polvo Reutilizable, 12 Piezas de Papel de Lija Incluidos - TAMS23P"
+    >
       <header>
         <div>
           <h1>Lijadora</h1>

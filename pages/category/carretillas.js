@@ -116,7 +116,14 @@ export default function CarretillaScreen(props) {
   const { button: buttonStyles, ...contentStyles } =
     useBlogTextInfoContentStyles();
   return (
-    <Layout>
+    <Layout
+      title="Las 5 carretillas más vendidas en Amazon España"
+      description="ATHLON TOOLS Carretilla plegable de aluminio | zona de carga con almohadillas antideslizantes | ruedas con bandas de rodadura suaves | incl. 2 cuerdas extensibles
+      Stanley SXWTD-HT523 - Carretilla de mano de acero, 200 kg, Amarilla
+      Hivexagon Carrito de Equipaje Plegable, Compacto Ligero Duradero de Aluminio Capacidad de Carga de 40kg/88lbs para Equipaje, Viajes, de compras, Uso en Oficina y Transporte HG405
+      Meister 8985730 - Carretilla, 45 kg, mini, plegable
+      DURHAND Carretilla Plegable para Escalera con Ruedas Carga 150kg Carretilla de Mano Portátil para Entrega Almacenes Mercado Viajar Mudarse"
+    >
       <header>
         <div>
           <h1>Carretillas</h1>

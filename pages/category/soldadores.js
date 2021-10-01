@@ -109,7 +109,14 @@ export default function SoldadorScreen(props) {
   const { button: buttonStyles, ...contentStyles } =
     useBlogTextInfoContentStyles();
   return (
-    <Layout>
+    <Layout
+      title="Los 5 soldadores más vendidos en Amazon España"
+      description="E·Durable Soldadores de Estaño Electronica, 60W 220V Kit del Soldador 5pcs Puntas Diferentes,Alambre de Soldadura Soporte,Cortador,Pinzas,destornillador
+      Campingaz 2000026173 - Soldador
+      Dremel Versatip 2000 - Pirograbador a gas butano con 6 puntas para soldadura, pirografo, fusión, corte en caliente, compresión (duración de encendido máximo 90 min)
+      Bostar Máquinas de Soldadura de Parachoques Automáticos 220V Herramienta de Reparacion de Parachoques de Coche de Plastico Grapador Caliente Carenado de Guardafango de Carroceria
+      STAYER 1.2381 Equipo de Soldadura Inverter, Super Plus 160 GEK"
+    >
       <header>
         <div>
           <h1>Soldadores</h1>

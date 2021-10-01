@@ -123,7 +123,14 @@ export default function PiscinaDesmontableScreen(props) {
   const { button: buttonStyles, ...contentStyles } =
     useBlogTextInfoContentStyles();
   return (
-    <Layout>
+    <Layout
+      title="Las 5 piscinas desmontables más vendidas en Amazon España"
+      description="Intex 28272NP Small Frame - Piscina desmontable, 300 x 200 x 75 cm, 3.834 litros, azul
+      Bestway 56416 - Piscina Desmontable Tubular Steel Pro Max 366x76 cm Depuradora de Cartucho 1.249 litros/hora
+      Intex 28202NP - Piscina redonda metal frame intex 305x76 cm 4485 litros + depuradora
+      INTEX-57100NP Piscina infantil hinchable cuadrada, colores aleatorios, 86 x 86 x 25 cm, 1 unidad
+      Bestway 57270 - Piscina Desmontable Autoportante Fast Set 305x76 cm Depuradora de cartucho de 1.249 litros/hora"
+    >
       <header>
         <div>
           <h1>Piscinas Desmontables</h1>

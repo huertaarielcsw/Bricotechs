@@ -142,7 +142,14 @@ export default function AmoladoraScreen(props) {
   const { button: buttonStyles, ...contentStyles } =
     useBlogTextInfoContentStyles();
   return (
-    <Layout>
+    <Layout
+      title="Las 5 amoladoras más vendidas en Amazon España"
+      description="Black+Decker BEG010-QS - Amoladora 115mm, 710W, 12.000 rpm 
+      Bosch Professional GWS 7-115 E - Amoladora angular (720 W, 2800 – 11000 rpm, Ø Disco 115 mm, protección rearranque, en caja)
+      Einhell Amoladora angular TC-AG 125 (850W, 12.000 1/min de velocidad, disco de 125mm-ø, protector de disco, bloqueo de husillo, cabezal de engranaje plano de aluminio)
+      Amoladora Angular Profesional,Tilswall 860W 12000 RPM 125mm,Amoladora Angular con 3 Discos de Corte y 2 Esmerilado,Cubierta Protectora para Esmerilado/Pulido/Corte
+      Amoladora Angular 18V, HYCHIKA Radial Angular Inalámbrico, 8500RPM con 4.0Ah Batería, 4*Discos para Lijar y 1*para Cortar, Mango Ajustable, Cargador Rápido, Amoladora Angular a Batería para Multiusar"
+    >
       <header>
         <div>
           <h1>Amoladoras</h1>
@@ -170,7 +177,7 @@ export default function AmoladoraScreen(props) {
 
       <Divider light />
       <div>
-        <h2>Las 5 amoladoras más vendidas</h2>
+        <h2>Las 5 amoladoras más vendidas en Amazon España</h2>
         <Grid container spacing={3}>
           {products.map((product) => (
             <Grid container item md={4} key={product.name}>

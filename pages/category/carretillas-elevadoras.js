@@ -109,7 +109,14 @@ export default function CarretillaElevadoraScreen(props) {
   const { button: buttonStyles, ...contentStyles } =
     useBlogTextInfoContentStyles();
   return (
-    <Layout>
+    <Layout
+      title="Las 5 carretillas elevadoras más vendidas en Amazon España"
+      description="Makinex 0004662 Carretilla De Mano Motorizada
+      Ayerbe - Apilador manual ay-2500-apm 1000kg
+      TAP 47004 Apilador manual - fuerza 400kg
+      APILADOR MANUAL DE 1000KG DE CAPACIDAD 1600MM DE ELEVACIÓN
+      Apilador Manual de 1000kg de capacidad y 1600mm de elevación [Clase de eficiencia energética A]"
+    >
       <header>
         <div>
           <h1>Carretillas Elevadoras</h1>
