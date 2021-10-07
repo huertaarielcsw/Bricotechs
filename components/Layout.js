@@ -107,9 +107,9 @@ export default function Layout({ title, description, children }) {
         <title>{title ? `${title} - BricoTechs` : 'BricoTechs'}</title>
         {description && <meta name="description" content={description}></meta>}
         <script
+          data-ad-client="ca-pub-2405009743639501"
           async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2405009743639501"
-          crossOrigin="anonymous"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
         ></script>
       </Head>
       <ThemeProvider theme={theme}>
